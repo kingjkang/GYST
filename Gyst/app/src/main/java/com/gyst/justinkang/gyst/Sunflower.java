@@ -25,7 +25,7 @@ import java.beans.PropertyChangeListener;
  * Use the {@link Sunflower#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Sunflower extends android.app.Fragment implements PropertyChangeListener{
+public class Sunflower extends android.app.Fragment{
 
     Globals streakCount = Globals.getInstance();
     int updatedStreak = 0;
@@ -49,7 +49,8 @@ public class Sunflower extends android.app.Fragment implements PropertyChangeLis
                 updatedStreak = streakCount.getStreak() + 1;
                 streakCount.setStreak(updatedStreak);
                 ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-                flower.setImageResource(R.mipmap.sunflowerseedtest);
+                int temp = R.mipmap.sunflowerseedtest;
+                flower.setImageResource(temp);
             }
         });//this block of code works and changes the text so to change the image its the same thing
         //just need a different kind of listener such as a propertylistener so we can update the imageview
@@ -74,13 +75,14 @@ public class Sunflower extends android.app.Fragment implements PropertyChangeLis
         return view;
     }
 
-    @Override
-    public void propertyChange(PropertyChangeEvent evt){
-        if (streakCount.getStreak() == 1){
+
+    public void update(){
+
+        if (streakCount.getPetals() == 1){
             ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
             flower.setImageResource(R.mipmap.sunflowerseedtest);
         }
-        else if (streakCount.getStreak() == 2){
+        else if (streakCount.getPetals() == 2){
             ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
             flower.setImageResource(R.mipmap.sunflowertest);
         }

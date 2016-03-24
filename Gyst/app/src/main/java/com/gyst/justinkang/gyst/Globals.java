@@ -1,14 +1,18 @@
 package com.gyst.justinkang.gyst;
 
 import android.app.Application;
+import java.beans.PropertyChangeListener;
 
 /**
  * Created by justinkang on 3/23/16.
  */
+
 public class Globals extends Application{
     private static Globals instance;
 
     private int streak;
+    private int petals;
+   // public Sunflower sun = new Sunflower();
 
     public void setStreak(int i){
         this.streak = i;
@@ -18,9 +22,10 @@ public class Globals extends Application{
         return this.streak;
     }
 
-    private int petals;
-
-    public void setPetals (int i) { this.petals = i; }
+    public void setPetals (int i) {
+        this.petals = i;
+     //   sun.update();
+    }
 
     public int getPetals () { return this.petals; }
 
