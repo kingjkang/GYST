@@ -19,9 +19,11 @@ import android.view.MenuItem;
 public class GYSTHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static int numOfPetals = 0;
+
     android.app.Fragment frag = null;
     android.app.FragmentManager fragManager = getFragmentManager();
-    Globals streakCount = Globals.getInstance();
+    //Globals streakCount = Globals.getInstance();
     //streakCount.setStreak(1);
 
     @Override

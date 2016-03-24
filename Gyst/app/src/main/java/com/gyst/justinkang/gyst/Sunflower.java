@@ -42,22 +42,29 @@ public class Sunflower extends android.app.Fragment implements PropertyChangeLis
             @Override
             public void onClick(View v) {
                 TextView streak = (TextView)getActivity().findViewById(R.id.streak);
-                streak.setText("did it update?");
+                streak.setText("the text is changing");
                 streakCount.setStreak(2);
+                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+                flower.setImageResource(R.mipmap.sunflowerseedtest);
             }
         });//this block of code works and changes the text so to change the image its the same thing
         //just need a different kind of listener such as a propertylistener so we can update the imageview
         //but bug** when i leave the page and come back it just make it back to the default again
         //what if i want it to change permanenelty
 
-        if (streakCount.getStreak() == 1){
-            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-            flower.setImageResource(R.mipmap.sunflowerseedtest);
-        }
-        else if (streakCount.getStreak() == 2){
-            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-            flower.setImageResource(R.mipmap.sunflowertest);
-        }
+//        if (GYSTHome.numOfPetals == 0){
+//            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+//            flower.setImageResource(R.mipmap.sunflowerseedtest);
+//        }
+//
+//        if (streakCount.getStreak() == 1){
+//            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+//            flower.setImageResource(R.mipmap.sunflowerseedtest);
+//        }
+//        else if (streakCount.getStreak() == 2){
+//            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+//            flower.setImageResource(R.mipmap.sunflowertest);
+//        }
 
 
         return view;

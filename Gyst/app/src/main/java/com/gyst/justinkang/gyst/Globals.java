@@ -6,7 +6,7 @@ package com.gyst.justinkang.gyst;
 public class Globals {
     private static Globals instance;
 
-    private int streak = 0;
+    private int streak;
 
     public void setStreak(int i){
         this.streak = i;
