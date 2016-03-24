@@ -28,6 +28,7 @@ import java.beans.PropertyChangeListener;
 public class Sunflower extends android.app.Fragment implements PropertyChangeListener{
 
     Globals streakCount = Globals.getInstance();
+    int updatedStreak = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -37,13 +38,16 @@ public class Sunflower extends android.app.Fragment implements PropertyChangeLis
                 container, false);
         //need to do some sort of switch case so i can put different flowers based on numbers
 
+        //streak.setText(Integer.toString(streakCount.getStreak()));
+
         Button updateButton = (Button) view.findViewById(R.id.testButton);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView streak = (TextView)getActivity().findViewById(R.id.streak);
-                streak.setText("the text is changing");
-                streakCount.setStreak(2);
+                streak.setText(Integer.toString(streakCount.getStreak()));
+                updatedStreak = streakCount.getStreak() + 1;
+                streakCount.setStreak(updatedStreak);
                 ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
                 flower.setImageResource(R.mipmap.sunflowerseedtest);
             }
@@ -68,10 +72,6 @@ public class Sunflower extends android.app.Fragment implements PropertyChangeLis
 
 
         return view;
-    }
-
-    public void updateFlower(View view){
-
     }
 
     @Override

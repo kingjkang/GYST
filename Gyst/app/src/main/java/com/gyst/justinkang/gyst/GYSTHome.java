@@ -19,12 +19,8 @@ import android.view.MenuItem;
 public class GYSTHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static int numOfPetals = 0;
-
     android.app.Fragment frag = null;
     android.app.FragmentManager fragManager = getFragmentManager();
-    //Globals streakCount = Globals.getInstance();
-    //streakCount.setStreak(1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +49,7 @@ public class GYSTHome extends AppCompatActivity
 
         frag = new Sunflower();
         fragManager.beginTransaction().replace(R.id.mainFrame, frag).commit();
+
     }
 
     @Override
