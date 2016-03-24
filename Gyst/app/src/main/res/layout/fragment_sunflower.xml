@@ -10,17 +10,27 @@
         <!--android:layout_height="match_parent"-->
         <!--android:text="@string/frag_sunflower" />-->
     <TextView
+        android:id="@+id/streak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Streak: 10" />
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/sunflower"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/sunflowertest"
+        android:src="@mipmap/sunflowertest"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update fragment"
+        android:id="@+id/testButton"
+        android:layout_gravity="right|bottom"
+        android:onClick="updateFlower"/>
 
 </FrameLayout>

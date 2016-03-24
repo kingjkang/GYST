@@ -21,6 +21,8 @@ public class GYSTHome extends AppCompatActivity
 
     android.app.Fragment frag = null;
     android.app.FragmentManager fragManager = getFragmentManager();
+    Globals streakCount = Globals.getInstance();
+    //streakCount.setStreak(1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
