@@ -77,17 +77,27 @@ public class Sunflower extends android.app.Fragment{
             @Override
             public void onClick(View v) {
                 variables.setPetals(0);
-                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+                ImageView flower = (ImageView) getActivity().findViewById(R.id.sunflower);
                 flower.setImageResource(chooseFlower());
             }
         });
 
+
+
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+        TextView streak = (TextView)getActivity().findViewById(R.id.streak);
+        streak.setText(Integer.toString(variables.getStreak()));
+    }
+
     public int chooseFlower(){
-        String temp = "sunflower" + variables.getPetals();
-        System.out.println(temp);
+//        String temp = "sunflower" + variables.getPetals();
+//        System.out.println(temp);
+//        return R.mipmap.temp;
         if (variables.getPetals() == 0){
             return R.mipmap.sunflowerseedtest;
         }

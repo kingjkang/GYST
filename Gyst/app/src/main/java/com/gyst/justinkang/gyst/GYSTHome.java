@@ -15,12 +15,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class GYSTHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     android.app.Fragment frag = null;
     android.app.FragmentManager fragManager = getFragmentManager();
+    Globals variables = Globals.getInstance();
+    public static Fragment sunflowerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,7 @@ public class GYSTHome extends AppCompatActivity
 
         frag = new Sunflower();
         fragManager.beginTransaction().replace(R.id.mainFrame, frag).commit();
+
 
     }
 
@@ -97,7 +101,10 @@ public class GYSTHome extends AppCompatActivity
         } else if (id == R.id.nav_calendar) {
             frag = new Calendar();
         } else if (id == R.id.nav_home) {
-            frag = new Sunflower();
+            if (sunflowerFragment == null){
+                sunflowerFragment = new Sunflower();
+            }
+            frag = sunflowerFragment;
         }
 
         fragManager.beginTransaction().replace(R.id.mainFrame, frag).commit();
