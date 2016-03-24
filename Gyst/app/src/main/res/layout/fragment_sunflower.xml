@@ -31,21 +31,46 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="update fragment"
+        android:text="Increase Streak"
         android:id="@+id/testButton"
         android:layout_gravity="right|bottom"
         android:onClick="updateFlower"/>
 
     <ImageView
         android:id="@+id/sunflower"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="366dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@mipmap/sunflowertest"
+        android:src="@mipmap/sunflowerseedtest"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset Streak"
+        android:id="@+id/resetStreak"
+        android:layout_gravity="left|bottom" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Increase Petals"
+        android:id="@+id/increasePetals"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset Petals"
+        android:id="@+id/resetPetals"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="40dp"/>
 
 
 </FrameLayout>

@@ -27,7 +27,7 @@ import java.beans.PropertyChangeListener;
  */
 public class Sunflower extends android.app.Fragment{
 
-    Globals streakCount = Globals.getInstance();
+    Globals variables = Globals.getInstance();
     int updatedStreak = 0;
 
     @Override
@@ -36,55 +36,64 @@ public class Sunflower extends android.app.Fragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sunflower,
                 container, false);
-        //need to do some sort of switch case so i can put different flowers based on numbers
-
-        //streak.setText(Integer.toString(streakCount.getStreak()));
 
         Button updateButton = (Button) view.findViewById(R.id.testButton);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                updatedStreak = variables.getStreak() + 1;
+                variables.setStreak(updatedStreak);
                 TextView streak = (TextView)getActivity().findViewById(R.id.streak);
-                streak.setText(Integer.toString(streakCount.getStreak()));
-                updatedStreak = streakCount.getStreak() + 1;
-                streakCount.setStreak(updatedStreak);
-                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-                int temp = R.mipmap.sunflowerseedtest;
-                flower.setImageResource(temp);
+                streak.setText(Integer.toString(variables.getStreak()));
             }
         });//this block of code works and changes the text so to change the image its the same thing
         //just need a different kind of listener such as a propertylistener so we can update the imageview
         //but bug** when i leave the page and come back it just make it back to the default again
         //what if i want it to change permanenelty
 
-//        if (GYSTHome.numOfPetals == 0){
-//            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-//            flower.setImageResource(R.mipmap.sunflowerseedtest);
-//        }
-//
-//        if (streakCount.getStreak() == 1){
-//            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-//            flower.setImageResource(R.mipmap.sunflowerseedtest);
-//        }
-//        else if (streakCount.getStreak() == 2){
-//            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-//            flower.setImageResource(R.mipmap.sunflowertest);
-//        }
+        Button resetStreak = (Button) view.findViewById(R.id.resetStreak);
+        resetStreak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                variables.setStreak(0);
+                TextView streak = (TextView)getActivity().findViewById(R.id.streak);
+                streak.setText(Integer.toString(variables.getStreak()));
+            }
+        });
 
+        Button increasePetals = (Button) view.findViewById(R.id.increasePetals);
+        increasePetals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int updatedPetals = variables.getPetals() + 1;
+                variables.setPetals(updatedPetals);
+                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+                flower.setImageResource(chooseFlower());
+            }
+        });
+
+        Button resetPetals = (Button) view.findViewById(R.id.resetPetals);
+        resetPetals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                variables.setPetals(0);
+                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+                flower.setImageResource(chooseFlower());
+            }
+        });
 
         return view;
     }
 
-
-    public void update(){
-
-        if (streakCount.getPetals() == 1){
-            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-            flower.setImageResource(R.mipmap.sunflowerseedtest);
+    public int chooseFlower(){
+        if (variables.getPetals() == 0){
+            return R.mipmap.sunflowerseedtest;
         }
-        else if (streakCount.getPetals() == 2){
-            ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-            flower.setImageResource(R.mipmap.sunflowertest);
+        else if (variables.getPetals() == 1){
+            return R.mipmap.sunflowertest;
+        }
+        else {
+            return 1;
         }
     }
 
