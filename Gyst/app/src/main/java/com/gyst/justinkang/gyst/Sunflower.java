@@ -92,6 +92,8 @@ public class Sunflower extends android.app.Fragment{
         super.onViewCreated(view, savedInstanceState);
         TextView streak = (TextView)getActivity().findViewById(R.id.streak);
         streak.setText(Integer.toString(variables.getStreak()));
+        ImageView flower = (ImageView) getActivity().findViewById(R.id.sunflower);
+        flower.setImageResource(chooseFlower());
     }
 
     public int chooseFlower(){
