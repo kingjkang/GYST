@@ -86,6 +86,8 @@ public class Sunflower extends android.app.Fragment{
     }
 
     public int chooseFlower(){
+        String temp = "sunflower" + variables.getPetals();
+        System.out.println(temp);
         if (variables.getPetals() == 0){
             return R.mipmap.sunflowerseedtest;
         }
