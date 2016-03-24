@@ -101,10 +101,10 @@ public class Sunflower extends android.app.Fragment{
 //        System.out.println(temp);
 //        return R.mipmap.temp;
         if (variables.getPetals() == 0){
-            return R.mipmap.sunflowerseedtest;
+            return R.mipmap.sunflower0;
         }
         else if (variables.getPetals() == 1){
-            return R.mipmap.sunflowertest;
+            return R.mipmap.sunflower1;
         }
         else if (variables.getPetals() == 2){
             return R.mipmap.sunflower2;
@@ -151,8 +151,20 @@ public class Sunflower extends android.app.Fragment{
         else if (variables.getPetals() == 16){
             return R.mipmap.sunflower16;
         }
+        else if (variables.getPetals() == 17){
+            return R.mipmap.sunflower17;
+        }
+        else if (variables.getPetals() == 18){
+            return R.mipmap.sunflower18;
+        }
+        else if (variables.getPetals() == 19){
+            return R.mipmap.sunflower19;
+        }
+        else if (variables.getPetals() == 20){
+            return R.mipmap.sunflower20;
+        }
         else {
-            return 1;
+            return R.mipmap.sunflowertest;
         }
     }
 
