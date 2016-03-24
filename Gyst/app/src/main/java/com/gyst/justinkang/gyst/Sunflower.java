@@ -92,6 +92,51 @@ public class Sunflower extends android.app.Fragment{
         else if (variables.getPetals() == 1){
             return R.mipmap.sunflowertest;
         }
+        else if (variables.getPetals() == 2){
+            return R.mipmap.sunflower2;
+        }
+        else if (variables.getPetals() == 3){
+            return R.mipmap.sunflower3;
+        }
+        else if (variables.getPetals() == 4){
+            return R.mipmap.sunflower4;
+        }
+        else if (variables.getPetals() == 5){
+            return R.mipmap.sunflower5;
+        }
+        else if (variables.getPetals() == 6){
+            return R.mipmap.sunflower6;
+        }
+        else if (variables.getPetals() == 7){
+            return R.mipmap.sunflower7;
+        }
+        else if (variables.getPetals() == 8){
+            return R.mipmap.sunflower8;
+        }
+        else if (variables.getPetals() == 9){
+            return R.mipmap.sunflower9;
+        }
+        else if (variables.getPetals() == 10){
+            return R.mipmap.sunflower10;
+        }
+        else if (variables.getPetals() == 11){
+            return R.mipmap.sunflower11;
+        }
+        else if (variables.getPetals() == 12){
+            return R.mipmap.sunflower12;
+        }
+        else if (variables.getPetals() == 13){
+            return R.mipmap.sunflower13;
+        }
+        else if (variables.getPetals() == 14){
+            return R.mipmap.sunflower14;
+        }
+        else if (variables.getPetals() == 15){
+            return R.mipmap.sunflower15;
+        }
+        else if (variables.getPetals() == 16){
+            return R.mipmap.sunflower16;
+        }
         else {
             return 1;
         }
