@@ -1,6 +1,11 @@
 package com.gyst.justinkang.gyst;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import java.beans.PropertyChangeListener;
 
 /**
@@ -12,13 +17,18 @@ public class Globals extends Application{
 
     private int streak;
     private int petals;
-   // public Sunflower sun = new Sunflower();
 
+    private SharedPreferences.Editor editor;
+    private Globals(){
+
+    }
     public void setStreak(int i){
+
         this.streak = i;
     }
 
     public int getStreak(){
+
         return this.streak;
     }
 
