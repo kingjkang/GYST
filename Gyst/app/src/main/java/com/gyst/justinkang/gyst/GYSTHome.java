@@ -2,7 +2,9 @@ package com.gyst.justinkang.gyst;
 
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +26,10 @@ public class GYSTHome extends AppCompatActivity
     android.app.FragmentManager fragManager = getFragmentManager();
     Globals variables = Globals.getInstance();
     public static Fragment sunflowerFragment;
+    public static final String storage = "StorageFile";
+    public static final String storeStreak = "streakKey";
+    public static final String storePetals = "petalsKey";
+    static SharedPreferences storageLocker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +59,11 @@ public class GYSTHome extends AppCompatActivity
         frag = new Sunflower();
         fragManager.beginTransaction().replace(R.id.mainFrame, frag).commit();
 
-
+        storageLocker = getSharedPreferences(storage, Context.MODE_PRIVATE);
+        int s = storageLocker.getInt(storeStreak, 0);
+        int p = storageLocker.getInt(storePetals, 0);
+        variables.setStreak(s);
+        variables.setPetals(p);
     }
 
     @Override
@@ -86,6 +96,17 @@ public class GYSTHome extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onStop(){
+        super.onStop();
+        storageLocker = getSharedPreferences(storage, Context.MODE_PRIVATE);
+        int s = variables.getStreak();
+        int p = variables.getPetals();
+        SharedPreferences.Editor editor = storageLocker.edit();
+        editor.putInt(storeStreak, s);
+        editor.putInt(storePetals, p);
+        editor.apply();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
