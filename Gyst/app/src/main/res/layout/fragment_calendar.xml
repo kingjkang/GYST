@@ -23,7 +23,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginTop="10dp"/>
 
-
     <ListView
         android:id="@+id/eventList"
         android:layout_width="match_parent"
@@ -33,38 +32,15 @@
         android:layout_marginTop="1dp" >
     </ListView>
 
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="@string/frag_calendar" />-->
-
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="0.5"-->
-        <!--android:clickable="true"-->
-        <!--android:focusable="true">-->
-
-        <!--<CalendarView-->
-            <!--android:id="@+id/calendarMonth"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:adjustViewBounds="true"-->
-            <!--android:clickable="true">-->
-        <!--</CalendarView>-->
-
-    <!--</RelativeLayout>-->
-
-    <!--<ListView-->
-        <!--android:id="@+id/dailyView1"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_weight="0.5"-->
-        <!--android:layout_marginLeft="5dp"-->
-        <!--android:layout_marginRight="5dp"-->
-        <!--android:layout_gravity="center_horizontal|center"-->
-        <!--android:clickable="true"-->
-        <!--android:focusable="true" />-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addEvent"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/add" />
 
 
 </RelativeLayout>

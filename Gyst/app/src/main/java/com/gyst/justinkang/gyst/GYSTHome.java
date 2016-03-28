@@ -117,15 +117,13 @@ public class GYSTHome extends AppCompatActivity
         //it prints out Events Listing and Calendar
         int id = item.getItemId();
 
-        if (id == R.id.nav_events) {
-            frag = new EventsListing();
-        } else if (id == R.id.nav_calendar) {
-            frag = new Calendar();
-        } else if (id == R.id.nav_home) {
+        if (id == R.id.nav_home) {
             if (sunflowerFragment == null){
                 sunflowerFragment = new Sunflower();
             }
             frag = sunflowerFragment;
+        } else if (id == R.id.nav_calendar) {
+            frag = new Calendar();
         }
 
         fragManager.beginTransaction().replace(R.id.mainFrame, frag).commit();

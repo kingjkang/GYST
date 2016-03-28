@@ -3,6 +3,8 @@ package com.gyst.justinkang.gyst;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,8 +30,25 @@ public class Calendar extends android.app.Fragment {
         View view = inflater.inflate(R.layout.fragment_calendar,
                 container, false);
 
+//        FloatingActionButton addEvent = (FloatingActionButton) getActivity().findViewById(R.id.addEvent);
+//        addEvent.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+////                        .setAction("Action", null).show();
+//                System.out.println("plz compile");
+//            }
+//        });
+
         return view;
     }
+
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//    }
+
 
 
 //    // TODO: Rename parameter arguments, choose names that match
