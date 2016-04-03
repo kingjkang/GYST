@@ -1,13 +1,46 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gyst.justinkang.gyst.Calendar">
+    tools:context="com.gyst.justinkang.gyst.Calendar"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/frag_calendar" />
 
-</FrameLayout>
+    <CalendarView
+        android:id="@+id/calendarMonth"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"/>
+
+    <TextView
+        android:id="@+id/eventText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendarMonth"
+        android:layout_centerHorizontal="true"
+        android:text="Events"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="10dp"/>
+
+    <ListView
+        android:id="@+id/eventList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/eventText"
+        android:layout_marginTop="1dp" >
+    </ListView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addEvent"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/add" />
+
+
+</RelativeLayout>

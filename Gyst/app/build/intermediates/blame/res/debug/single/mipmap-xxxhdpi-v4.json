@@ -4,12 +4,12 @@
         "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower6.png"
     },
     {
-        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower14.png",
-        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower14.png"
-    },
-    {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower19.png",
         "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower19.png"
+    },
+    {
+        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower14.png",
+        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower14.png"
     },
     {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower8.png",
@@ -32,12 +32,12 @@
         "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower12.png"
     },
     {
-        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower9.png",
-        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower9.png"
-    },
-    {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower20.png",
         "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower20.png"
+    },
+    {
+        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower9.png",
+        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower9.png"
     },
     {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower15.png",
@@ -48,12 +48,12 @@
         "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower3.png"
     },
     {
-        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
-        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower18.png",
         "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower18.png"
+    },
+    {
+        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower11.png",
@@ -74,6 +74,10 @@
     {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower4.png",
         "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/sunflower4.png"
+    },
+    {
+        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/cloud.jpg",
+        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxxhdpi/cloud.jpg"
     },
     {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/sunflower2.png",

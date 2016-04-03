@@ -1,6 +1,7 @@
 package com.gyst.justinkang.gyst;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -37,52 +38,48 @@ public class Sunflower extends android.app.Fragment{
         View view = inflater.inflate(R.layout.fragment_sunflower,
                 container, false);
 
-        Button updateButton = (Button) view.findViewById(R.id.testButton);
-        updateButton.setOnClickListener(new View.OnClickListener() {
+
+        //This is what happens when an event is attended
+        Button attendedButton = (Button) view.findViewById(R.id.attendedEvent);
+        attendedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updatedStreak = variables.getStreak() + 1;
                 variables.setStreak(updatedStreak);
                 TextView streak = (TextView)getActivity().findViewById(R.id.streak);
                 streak.setText(Integer.toString(variables.getStreak()));
-            }
-        });//this block of code works and changes the text so to change the image its the same thing
-        //just need a different kind of listener such as a propertylistener so we can update the imageview
-        //but bug** when i leave the page and come back it just make it back to the default again
-        //what if i want it to change permanenelty
 
-        Button resetStreak = (Button) view.findViewById(R.id.resetStreak);
-        resetStreak.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                variables.setStreak(0);
-                TextView streak = (TextView)getActivity().findViewById(R.id.streak);
-                streak.setText(Integer.toString(variables.getStreak()));
-            }
-        });
-
-        Button increasePetals = (Button) view.findViewById(R.id.increasePetals);
-        increasePetals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 int updatedPetals = variables.getPetals() + 1;
+                //This takes into account that the user has more than 20 petals
+                if(updatedPetals>20){
+                    updatedPetals=20;
+                }
                 variables.setPetals(updatedPetals);
                 ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
                 flower.setImageResource(chooseFlower());
             }
         });
 
-        Button resetPetals = (Button) view.findViewById(R.id.resetPetals);
-        resetPetals.setOnClickListener(new View.OnClickListener() {
+
+        //This is what happens when an event is missed
+        Button missedButton = (Button) view.findViewById(R.id.missedEvent);
+        missedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                variables.setPetals(0);
-                ImageView flower = (ImageView) getActivity().findViewById(R.id.sunflower);
+                variables.setStreak(0);
+                TextView streak = (TextView)getActivity().findViewById(R.id.streak);
+                streak.setText(Integer.toString(variables.getStreak()));
+
+                int updatedPetals = variables.getPetals() -1;
+                //this takes into account the user has less than 0 petals
+                if(updatedPetals<0){
+                    updatedPetals=0;
+                }
+                variables.setPetals(updatedPetals);
+                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
                 flower.setImageResource(chooseFlower());
             }
         });
-
-
 
         return view;
     }

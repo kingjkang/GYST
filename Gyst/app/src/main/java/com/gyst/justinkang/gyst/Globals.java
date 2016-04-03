@@ -14,14 +14,18 @@ import java.beans.PropertyChangeListener;
 
 public class Globals extends Application{
     private static Globals instance;
+    //public static final String storage = "StorageFile";
 
     private int streak;
     private int petals;
 
-    private SharedPreferences.Editor editor;
-    private Globals(){
 
-    }
+    private Globals (){}
+    //This is our private constructor, limiting the access to the data strictly to this class.
+
+
+    private SharedPreferences.Editor editor;
+
     public void setStreak(int i){
 
         this.streak = i;
@@ -40,9 +44,13 @@ public class Globals extends Application{
     public int getPetals () { return this.petals; }
 
     public static synchronized Globals getInstance(){
+        //this function returns the instsance of that object if it is already existing, or
+        //creates the new one and only isntsance of that object and returning it.
+        //this makes sure that only one instance of that object is created in the status quo
         if (instance == null){
             instance = new Globals();
         }
+
         return instance;
     }
 
