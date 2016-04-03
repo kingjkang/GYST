@@ -1,10 +1,18 @@
 [
     {
-        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/sunflowertest.jpg",
-        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxhdpi/sunflowertest.jpg"
+        "merged": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\sunflowertest.jpg",
+        "source": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-xxhdpi\\sunflowertest.jpg"
     },
     {
-        "merged": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ic_launcher.png",
-        "source": "/Users/CaitriFeddeler/Desktop/Spring 2016/EE 461L/GYST/Gyst/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\sunflowertest.jpg",
+        "source": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-xxhdpi\\sunflowertest.jpg"
+    },
+    {
+        "merged": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     }
 ]
