@@ -11,9 +11,9 @@
         android:id="@+id/calendarMonth"
         android:layout_width="match_parent"
         android:layout_height="205dp"
-        android:clickable="true"
-        android:onClick="CalendarClick" />
-
+        android:clickable="true"/>
+        <!--android:onClick="CalendarClick" /> -->
+        <!--this is not a click its on a date listener -->
 
     <TextView
         android:id="@+id/eventText"
@@ -32,7 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/eventText"
-        android:layout_marginTop="1dp" >
+        android:layout_marginTop="1dp"
+        android:entries="@array/sections">
     </ListView>
 
     <android.support.design.widget.FloatingActionButton

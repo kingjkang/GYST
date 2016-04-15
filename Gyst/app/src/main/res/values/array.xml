@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sections">
+        <item >Event1</item>
+        <item >Event2</item>
+        <item >Event3</item>
+        <item >Event4</item>
+        <item >Event5</item>
+    </string-array>
+</resources>

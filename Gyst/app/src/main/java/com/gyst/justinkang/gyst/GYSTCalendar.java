@@ -8,6 +8,7 @@ import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,10 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.net.Uri;
 import android.provider.CalendarContract;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.beans.PropertyChangeEvent;
@@ -84,7 +88,20 @@ public class GYSTCalendar extends android.app.Fragment {
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
                 //Toast.makeText(getActivity().getApplicationContext(), "" + dayOfMonth, Toast.LENGTH_SHORT).show();// TODO Auto-generated method stub
-                System.err.println("date was clicked "+ dayOfMonth);
+                System.err.println("date was clicked " + dayOfMonth);
+            }
+        });
+
+        String[] myKeys = getResources().getStringArray(R.array.sections);
+        ListView list = (ListView)view.findViewById(R.id.eventList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, myKeys);
+        list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(GYSTCalendar.this.getActivity() ,LoginActivity.class);
+                startActivity(intent);
             }
         });
 

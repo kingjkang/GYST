@@ -1,26 +1,10 @@
 [
     {
-        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_gysthome.xml",
-        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\src\\main\\res\\menu\\menu_gysthome.xml"
-    },
-    {
         "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/build/intermediates/res/merged/debug/menu/menu_gysthome.xml",
         "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/res/menu/menu_gysthome.xml"
     },
     {
-        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_gysthome.xml",
-        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\src\\main\\res\\menu\\menu_gysthome.xml"
-    },
-    {
-        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_drawer.xml",
-        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\src\\main\\res\\menu\\main_drawer.xml"
-    },
-    {
         "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/build/intermediates/res/merged/debug/menu/main_drawer.xml",
         "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/res/menu/main_drawer.xml"
-    },
-    {
-        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_drawer.xml",
-        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\src\\main\\res\\menu\\main_drawer.xml"
     }
 ]
