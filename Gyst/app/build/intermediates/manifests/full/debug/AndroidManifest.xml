@@ -33,8 +33,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.gyst.justinkang.gyst.LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:name="com.gyst.justinkang.gyst.EditEvent"
+            android:label="@string/title_activity_edit_event" />
     </application>
 
 </manifest>

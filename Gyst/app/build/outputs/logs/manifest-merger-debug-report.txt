@@ -71,12 +71,12 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:26:17-77
 	android:name
 		ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:26:27-74
-activity#com.gyst.justinkang.gyst.LoginActivity
-ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:29:9-31:69
+activity#com.gyst.justinkang.gyst.EditEvent
+ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:29:9-31:74
 	android:label
-		ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:31:13-57
+		ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:31:13-62
 	android:name
-		ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:30:13-42
+		ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml:30:13-38
 uses-sdk
 INJECTED from /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.1.1] /Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/AndroidManifest.xml:20:5-43

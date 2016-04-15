@@ -51,32 +51,35 @@ public class GYSTCalendar extends android.app.Fragment {
             @Override
             public void onClick(View view) {
 // Construct event details
-                long startMillis = 0;
-                long endMillis = 0;
-                Calendar beginTime = Calendar.getInstance();
-                beginTime.set(2012, 9, 14, 7, 30);
-                startMillis = beginTime.getTimeInMillis();
-                Calendar endTime = Calendar.getInstance();
-                endTime.set(2012, 9, 14, 8, 45);
-                endMillis = endTime.getTimeInMillis();
+//                long startMillis = 0;
+//                long endMillis = 0;
+//                Calendar beginTime = Calendar.getInstance();
+//                beginTime.set(2012, 9, 14, 7, 30);
+//                startMillis = beginTime.getTimeInMillis();
+//                Calendar endTime = Calendar.getInstance();
+//                endTime.set(2012, 9, 14, 8, 45);
+//                endMillis = endTime.getTimeInMillis();
+//
+//// Insert Event
+//                Intent intent = new Intent(Intent.ACTION_INSERT)
+//                        .setType("vnd.android.cursor.item/event")
+//                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
+//                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+//                        .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY , false) // just included for completeness
+//                        .putExtra(CalendarContract.Events.TITLE, "My Awesome Event")
+//                        .putExtra(CalendarContract.Events.DESCRIPTION, "Heading out with friends to do something awesome.")
+//                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Earth")
+//                        .putExtra(CalendarContract.Events.RRULE, "FREQ=DAILY;COUNT=10")
+//                        .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
+//                        .putExtra(CalendarContract.Events.ACCESS_LEVEL, CalendarContract.Events.ACCESS_PRIVATE);
+//                        //.putExtra(Intent.EXTRA_EMAIL, "my.friend@example.com");
+//                startActivity(intent);
+//
+//                long CalendarID = getId();
+//                System.out.println(CalendarID);
 
-// Insert Event
-                Intent intent = new Intent(Intent.ACTION_INSERT)
-                        .setType("vnd.android.cursor.item/event")
-                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
-                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
-                        .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY , false) // just included for completeness
-                        .putExtra(CalendarContract.Events.TITLE, "My Awesome Event")
-                        .putExtra(CalendarContract.Events.DESCRIPTION, "Heading out with friends to do something awesome.")
-                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Earth")
-                        .putExtra(CalendarContract.Events.RRULE, "FREQ=DAILY;COUNT=10")
-                        .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
-                        .putExtra(CalendarContract.Events.ACCESS_LEVEL, CalendarContract.Events.ACCESS_PRIVATE);
-                        //.putExtra(Intent.EXTRA_EMAIL, "my.friend@example.com");
+                Intent intent = new Intent(GYSTCalendar.this.getActivity() ,EditEvent.class);
                 startActivity(intent);
-
-                long CalendarID = getId();
-                System.out.println(CalendarID);
 
             }
         });
@@ -100,7 +103,7 @@ public class GYSTCalendar extends android.app.Fragment {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(GYSTCalendar.this.getActivity() ,LoginActivity.class);
+                Intent intent = new Intent(GYSTCalendar.this.getActivity() ,EditEvent.class);
                 startActivity(intent);
             }
         });

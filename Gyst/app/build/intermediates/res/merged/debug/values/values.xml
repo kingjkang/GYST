@@ -296,11 +296,12 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
+    <string name="prompt_title">Enter Event Title</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_cal">CalActivity</string>
     <string name="title_activity_calendar">calendar</string>
+    <string name="title_activity_edit_event">EditEvent</string>
     <string name="title_activity_login">Sign in</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
