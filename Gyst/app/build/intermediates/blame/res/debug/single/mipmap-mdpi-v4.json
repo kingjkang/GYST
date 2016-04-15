@@ -1,10 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

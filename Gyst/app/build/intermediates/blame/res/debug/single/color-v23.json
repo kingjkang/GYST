@@ -1,10 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\CaitriFeddeler\\Desktop\\Spring 2016\\EE 461L\\GYST\\Gyst\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/C:\\Users\\qianh\\Desktop\\461L\\GYST\\Gyst\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/color-v23/abc_color_highlight_material.xml"
     }
 ]

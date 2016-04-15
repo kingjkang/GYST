@@ -10,7 +10,10 @@
     <CalendarView
         android:id="@+id/calendarMonth"
         android:layout_width="match_parent"
-        android:layout_height="205dp"/>
+        android:layout_height="205dp"
+        android:clickable="true"
+        android:onClick="CalendarClick" />
+
 
     <TextView
         android:id="@+id/eventText"
