@@ -1,114 +1,204 @@
 package com.gyst.justinkang.gyst;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.CalendarContract;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.Calendar;
-import android.content.ContentResolver;
-import android.content.ContentValues;
-import android.net.Uri;
-import android.provider.CalendarContract;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CalendarView;
-import android.widget.ListView;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.TimeZone;
-
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Calendar.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Calendar#newInstance} factory method to
- * create an instance of this fragment.
+ * @author Mukesh Y
  */
-public class GYSTCalendar extends android.app.Fragment {
-    Globals variables = Globals.getInstance();
+public class GYSTCalendar extends AppCompatActivity {
 
+    public GregorianCalendar month, itemmonth;// calendar instances.
 
-    @Override
-    public View onCreateView(LayoutInflater inflater,
-                             ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_calendar,
-                container, false);
+    public CalendarAdapter adapter;// adapter instance
+    public Handler handler;// for grabbing some event values for showing the dot
+    // marker.
+    public ArrayList<String> items; // container to store calendar items which
+    // needs showing the event marker
+    ArrayList<String> event;
+    LinearLayout rLayout;
+    ArrayList<String> date;
+    ArrayList<String> desc;
 
-        FloatingActionButton addEvent = (FloatingActionButton) view.findViewById(R.id.addEvent);
-        addEvent.setOnClickListener(new View.OnClickListener() {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_calendar);
+        Locale.setDefault(Locale.US);
+
+        rLayout = (LinearLayout) findViewById(R.id.text);
+        month = (GregorianCalendar) GregorianCalendar.getInstance();
+        itemmonth = (GregorianCalendar) month.clone();
+
+        items = new ArrayList<String>();
+
+        adapter = new CalendarAdapter(this, month);
+
+        GridView gridview = (GridView) findViewById(R.id.gridview);
+        gridview.setAdapter(adapter);
+
+        handler = new Handler();
+        handler.post(calendarUpdater);
+
+        TextView title = (TextView) findViewById(R.id.title);
+        title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
+
+        RelativeLayout previous = (RelativeLayout) findViewById(R.id.previous);
+
+        previous.setOnClickListener(new OnClickListener() {
+
             @Override
-            public void onClick(View view) {
-// Construct event details
-//                long startMillis = 0;
-//                long endMillis = 0;
-//                Calendar beginTime = Calendar.getInstance();
-//                beginTime.set(2012, 9, 14, 7, 30);
-//                startMillis = beginTime.getTimeInMillis();
-//                Calendar endTime = Calendar.getInstance();
-//                endTime.set(2012, 9, 14, 8, 45);
-//                endMillis = endTime.getTimeInMillis();
-//
-//// Insert Event
-//                Intent intent = new Intent(Intent.ACTION_INSERT)
-//                        .setType("vnd.android.cursor.item/event")
-//                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
-//                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
-//                        .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY , false) // just included for completeness
-//                        .putExtra(CalendarContract.Events.TITLE, "My Awesome Event")
-//                        .putExtra(CalendarContract.Events.DESCRIPTION, "Heading out with friends to do something awesome.")
-//                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Earth")
-//                        .putExtra(CalendarContract.Events.RRULE, "FREQ=DAILY;COUNT=10")
-//                        .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
-//                        .putExtra(CalendarContract.Events.ACCESS_LEVEL, CalendarContract.Events.ACCESS_PRIVATE);
-//                        //.putExtra(Intent.EXTRA_EMAIL, "my.friend@example.com");
-//                startActivity(intent);
-//
-//                long CalendarID = getId();
-//                System.out.println(CalendarID);
+            public void onClick(View v) {
+                setPreviousMonth();
+                refreshCalendar();
+            }
+        });
 
-                Intent intent = new Intent(GYSTCalendar.this.getActivity() ,EditEvent.class);
-                startActivity(intent);
+        RelativeLayout next = (RelativeLayout) findViewById(R.id.next);
+        next.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                setNextMonth();
+                refreshCalendar();
 
             }
         });
 
-        CalendarView calendarView=(CalendarView) view.findViewById(R.id.calendarMonth);
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        gridview.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                // removing the previous view if added
+                if (((LinearLayout) rLayout).getChildCount() > 0) {
+                    ((LinearLayout) rLayout).removeAllViews();
+                }
+                desc = new ArrayList<String>();
+                date = new ArrayList<String>();
+                ((CalendarAdapter) parent.getAdapter()).setSelected(v);
+                String selectedGridDate = CalendarAdapter.dayString
+                        .get(position);
+                String[] separatedTime = selectedGridDate.split("-");
+                String gridvalueString = separatedTime[2].replaceFirst("^0*",
+                        "");// taking last part of date. ie; 2 from 2012-12-02.
+                int gridvalue = Integer.parseInt(gridvalueString);
+                // navigate to next or previous month on clicking offdays.
+                if ((gridvalue > 10) && (position < 8)) {
+                    setPreviousMonth();
+                    refreshCalendar();
+                } else if ((gridvalue < 7) && (position > 28)) {
+                    setNextMonth();
+                    refreshCalendar();
+                }
+                ((CalendarAdapter) parent.getAdapter()).setSelected(v);
 
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month,
-                                            int dayOfMonth) {
-                //Toast.makeText(getActivity().getApplicationContext(), "" + dayOfMonth, Toast.LENGTH_SHORT).show();// TODO Auto-generated method stub
-                System.err.println("date was clicked " + dayOfMonth);
+                for (int i = 0; i < Utility.startDates.size(); i++) {
+                    if (Utility.startDates.get(i).equals(selectedGridDate)) {
+                        desc.add(Utility.nameOfEvent.get(i));
+                    }
+                }
+
+                if (desc.size() > 0) {
+                    for (int i = 0; i < desc.size(); i++) {
+                        TextView rowTextView = new TextView(GYSTCalendar.this);
+
+                        // set some properties of rowTextView or something
+                        rowTextView.setText("Event:" + desc.get(i));
+                        rowTextView.setTextColor(Color.BLACK);
+
+                        // add the textview to the linearlayout
+                        rLayout.addView(rowTextView);
+
+                    }
+
+                }
+
+                desc = null;
+
             }
+
         });
-
-        String[] myKeys = getResources().getStringArray(R.array.sections);
-        ListView list = (ListView)view.findViewById(R.id.eventList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, myKeys);
-        list.setAdapter(adapter);
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(GYSTCalendar.this.getActivity() ,EditEvent.class);
-                startActivity(intent);
-            }
-        });
-
-        return view;
     }
 
+    protected void setNextMonth() {
+        if (month.get(GregorianCalendar.MONTH) == month
+                .getActualMaximum(GregorianCalendar.MONTH)) {
+            month.set((month.get(GregorianCalendar.YEAR) + 1),
+                    month.getActualMinimum(GregorianCalendar.MONTH), 1);
+        } else {
+            month.set(GregorianCalendar.MONTH,
+                    month.get(GregorianCalendar.MONTH) + 1);
+        }
+
+    }
+
+    protected void setPreviousMonth() {
+        if (month.get(GregorianCalendar.MONTH) == month
+                .getActualMinimum(GregorianCalendar.MONTH)) {
+            month.set((month.get(GregorianCalendar.YEAR) - 1),
+                    month.getActualMaximum(GregorianCalendar.MONTH), 1);
+        } else {
+            month.set(GregorianCalendar.MONTH,
+                    month.get(GregorianCalendar.MONTH) - 1);
+        }
+
+    }
+
+    protected void showToast(String string) {
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void refreshCalendar() {
+        TextView title = (TextView) findViewById(R.id.title);
+
+        adapter.refreshDays();
+        adapter.notifyDataSetChanged();
+        handler.post(calendarUpdater); // generate some calendar items
+
+        title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
+    }
+
+    public Runnable calendarUpdater = new Runnable() {
+
+        @Override
+        public void run() {
+            items.clear();
+
+            // Print dates of the current week
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+            String itemvalue;
+            event = Utility.readCalendarEvent(GYSTCalendar.this);
+            Log.d("=====Event====", event.toString());
+            Log.d("=====Date ARRAY====", Utility.startDates.toString());
+
+            for (int i = 0; i < Utility.startDates.size(); i++) {
+                itemvalue = df.format(itemmonth.getTime());
+                itemmonth.add(GregorianCalendar.DATE, 1);
+                items.add(Utility.startDates.get(i).toString());
+            }
+            adapter.setItems(items);
+            adapter.notifyDataSetChanged();
+        }
+    };
 }

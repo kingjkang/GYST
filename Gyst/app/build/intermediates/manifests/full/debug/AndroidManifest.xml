@@ -35,6 +35,7 @@
         <activity
             android:name="com.gyst.justinkang.gyst.EditEvent"
             android:label="@string/title_activity_edit_event" />
+        <activity android:name="com.gyst.justinkang.gyst.GYSTCalendar" />
     </application>
 
 </manifest>
