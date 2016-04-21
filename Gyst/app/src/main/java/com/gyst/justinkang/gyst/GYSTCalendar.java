@@ -1,6 +1,8 @@
 package com.gyst.justinkang.gyst;
 
-
+/**
+ * Created by CaitriFeddeler on 4/19/16.
+ */
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -25,22 +27,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * @author Mukesh Y
- */
+
 public class GYSTCalendar extends AppCompatActivity {
 
     public GregorianCalendar month, itemmonth;// calendar instances.
 
     public CalendarAdapter adapter;// adapter instance
-    public Handler handler;// for grabbing some event values for showing the dot
-    // marker.
-    public ArrayList<String> items; // container to store calendar items which
-    // needs showing the event marker
+    public Handler handler;// for grabbing some event values for showing the dot marker.
+    public ArrayList<String> items; // store calendar items which needs showing the event marker
     ArrayList<String> event;
     LinearLayout rLayout;
     ArrayList<String> date;
     ArrayList<String> desc;
+    ArrayList<String> location;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +94,7 @@ public class GYSTCalendar extends AppCompatActivity {
                 }
                 desc = new ArrayList<String>();
                 date = new ArrayList<String>();
+                location = new ArrayList<String>();
                 ((CalendarAdapter) parent.getAdapter()).setSelected(v);
                 String selectedGridDate = CalendarAdapter.dayString
                         .get(position);
@@ -112,9 +112,18 @@ public class GYSTCalendar extends AppCompatActivity {
                 }
                 ((CalendarAdapter) parent.getAdapter()).setSelected(v);
 
+
+                //TODO this is where we would find all the start dates
+                //This means that Utility.startDates needs to have all the dates for recurring events
+                //this means that startdate.get(i) would return a list of dates for this event
+                //which we would then have to parse
                 for (int i = 0; i < Utility.startDates.size(); i++) {
+                    //for int j
+                    //utility.startDates.get(i).get(j).equals(selectedGrideDate)
+                    //desc.add(Utility.nameOfEvent.get(i)
                     if (Utility.startDates.get(i).equals(selectedGridDate)) {
                         desc.add(Utility.nameOfEvent.get(i));
+                        location.add(Utility.locationOfEvent.get(i));
                     }
                 }
 
@@ -123,7 +132,7 @@ public class GYSTCalendar extends AppCompatActivity {
                         TextView rowTextView = new TextView(GYSTCalendar.this);
 
                         // set some properties of rowTextView or something
-                        rowTextView.setText("Event:" + desc.get(i));
+                        rowTextView.setText(desc.get(i) + " at location: " + location.get(i));
                         rowTextView.setTextColor(Color.BLACK);
 
                         // add the textview to the linearlayout
@@ -134,6 +143,7 @@ public class GYSTCalendar extends AppCompatActivity {
                 }
 
                 desc = null;
+                location = null;
 
             }
 
