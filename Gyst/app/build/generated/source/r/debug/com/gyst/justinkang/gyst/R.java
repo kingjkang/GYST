@@ -2488,7 +2488,7 @@ containing a value of this type.
         public static final int design_navigation_item_subheader=0x7f040026;
         public static final int design_navigation_menu=0x7f040027;
         public static final int design_navigation_menu_item=0x7f040028;
-        public static final int fragment_calendar=0x7f040029;
+        public static final int activity_calendar =0x7f040029;
         public static final int fragment_calfrag=0x7f04002a;
         public static final int fragment_events_listing=0x7f04002b;
         public static final int fragment_sunflower=0x7f04002c;
