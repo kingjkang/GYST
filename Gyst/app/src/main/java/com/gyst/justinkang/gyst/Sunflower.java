@@ -44,19 +44,7 @@ public class Sunflower extends android.app.Fragment{
         attendedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updatedStreak = variables.getStreak() + 1;
-                variables.setStreak(updatedStreak);
-                TextView streak = (TextView)getActivity().findViewById(R.id.streak);
-                streak.setText(Integer.toString(variables.getStreak()));
-
-                int updatedPetals = variables.getPetals() + 1;
-                //This takes into account that the user has more than 20 petals
-                if(updatedPetals>20){
-                    updatedPetals=20;
-                }
-                variables.setPetals(updatedPetals);
-                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-                flower.setImageResource(chooseFlower());
+                attendedEvent();
             }
         });
 
@@ -66,18 +54,7 @@ public class Sunflower extends android.app.Fragment{
         missedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                variables.setStreak(0);
-                TextView streak = (TextView)getActivity().findViewById(R.id.streak);
-                streak.setText(Integer.toString(variables.getStreak()));
-
-                int updatedPetals = variables.getPetals() -1;
-                //this takes into account the user has less than 0 petals
-                if(updatedPetals<0){
-                    updatedPetals=0;
-                }
-                variables.setPetals(updatedPetals);
-                ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
-                flower.setImageResource(chooseFlower());
+                missedEvent();
             }
         });
 
@@ -92,7 +69,35 @@ public class Sunflower extends android.app.Fragment{
         ImageView flower = (ImageView) getActivity().findViewById(R.id.sunflower);
         flower.setImageResource(chooseFlower());
     }
+    public void attendedEvent(){
+        updatedStreak = variables.getStreak() + 1;
+        variables.setStreak(updatedStreak);
+        TextView streak = (TextView)getActivity().findViewById(R.id.streak);
+        streak.setText(Integer.toString(variables.getStreak()));
 
+        int updatedPetals = variables.getPetals() + 1;
+        //This takes into account that the user has more than 20 petals
+        if(updatedPetals>20){
+            updatedPetals=20;
+        }
+        variables.setPetals(updatedPetals);
+        ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+        flower.setImageResource(chooseFlower());
+    }
+    public void missedEvent(){
+        variables.setStreak(0);
+        TextView streak = (TextView)getActivity().findViewById(R.id.streak);
+        streak.setText(Integer.toString(variables.getStreak()));
+
+        int updatedPetals = variables.getPetals() -1;
+        //this takes into account the user has less than 0 petals
+        if(updatedPetals<0){
+            updatedPetals=0;
+        }
+        variables.setPetals(updatedPetals);
+        ImageView flower = (ImageView)getActivity().findViewById(R.id.sunflower);
+        flower.setImageResource(chooseFlower());
+    }
     public int chooseFlower(){
 //        String temp = "sunflower" + variables.getPetals();
 //        System.out.println(temp);
