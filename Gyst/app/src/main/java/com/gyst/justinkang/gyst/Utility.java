@@ -93,7 +93,8 @@ public class Utility extends Activity {
     public static void setAlarms() {
 
         for (int i = 0; i < Utility.nameOfEvent.size(); i++) {
-            if (Utility.locationOfEvent.get(i) != null) {
+            //the second part of this if statement makes sure we are only creating alarms for future events
+            if ((Utility.locationOfEvent.get(i) != null)&& (Utility.startTime.get(i)>System.currentTimeMillis())) {
 
                 long time = Utility.startTime.get(i);  //this is the time in milliseconds of the event
                 time= time - (15*60*1000);  //this sets the time to 15 min before start of event
