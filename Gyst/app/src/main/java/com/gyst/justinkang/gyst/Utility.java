@@ -76,7 +76,7 @@ public class Utility extends Activity {
 
         }
 
-        setAlarms();
+        //setAlarms();
 
         return nameOfEvent;
     }

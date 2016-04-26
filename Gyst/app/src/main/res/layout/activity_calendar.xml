@@ -48,20 +48,42 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <GridView
+    <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridview"
-        android:layout_below="@+id/header"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:listSelector="@android:color/transparent"
-        android:numColumns="7"
-        android:stretchMode="columnWidth" />
+        android:id="@+id/calendarLayout"
+        android:layout_below="@+id/header"
+        android:orientation="horizontal"
+        >
+        <GridView
+
+            android:id="@+id/gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="7" />
+
+    </RelativeLayout>
+
+    <!--<GridView-->
+
+        <!--android:id="@+id/gridview"-->
+        <!--android:layout_below="@+id/header"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="clip_vertical"-->
+        <!--android:listSelector="@android:color/transparent"-->
+        <!--android:numColumns="7"-->
+        <!--android:verticalSpacing="-20dp" />-->
+        <!--android:stretchMode="columnWidth"-->
+        <!--android:verticalSpacing="-20dp" -->
+
 
     <LinearLayout
         android:id="@+id/text"
-        android:layout_below="@+id/gridview"
+        android:layout_below="@+id/calendarLayout"
         android:layout_width="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
@@ -74,5 +96,15 @@
             android:visibility="gone"
             android:text=""/> -->
     </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@android:drawable/ic_dialog_email" />
 
 </RelativeLayout>
