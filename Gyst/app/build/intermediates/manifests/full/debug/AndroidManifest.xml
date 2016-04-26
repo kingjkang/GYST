@@ -41,10 +41,11 @@
             </intent-filter>
         </activity>
         <activity android:name="com.gyst.justinkang.gyst.GYSTCalendar" />
+        <activity android:name="com.gyst.justinkang.gyst.Utility" />
 
         <receiver android:name="com.gyst.justinkang.gyst.AlarmReceiver" >
         </receiver>
-        service android:name=".GeofenceTransitionsIntentService"/>
+        <!-- service android:name=".GeofenceTransitionsIntentService"/> -->
     </application>
 
 </manifest>

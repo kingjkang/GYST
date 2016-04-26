@@ -35,9 +35,10 @@
             </intent-filter>
         </activity>
         <activity android:name="GYSTCalendar" />
+        <activity android:name="Utility"/>
         <receiver android:name="AlarmReceiver" >
         </receiver>
-        service android:name=".GeofenceTransitionsIntentService"/>
+        <!--service android:name=".GeofenceTransitionsIntentService"/>-->
     </application>
 
 </manifest>
