@@ -7,10 +7,17 @@ package com.gyst.justinkang.gyst;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -29,6 +36,18 @@ import android.widget.Toast;
 
 
 public class GYSTCalendar extends AppCompatActivity {
+
+    public static ArrayList<String> nameOfEvent = new ArrayList<String>();
+
+    //startdates should really be an arraylist of arraylists
+    //so get(i) returns a list of dates responding to event i
+    //startDates.get(i).get(5) returns the date of the 5th occurance of the event i;
+    public static ArrayList<String> startDates = new ArrayList<String>();
+    public static ArrayList<Long> startTime = new ArrayList<Long>();
+    public static ArrayList<String> endDates = new ArrayList<String>();
+    public static ArrayList<String> descriptions = new ArrayList<String>();
+    public static ArrayList<String> locationOfEvent = new ArrayList<String>();
+    public static ArrayList<String> recurringDates = new ArrayList<String>();
 
     public GregorianCalendar month, itemmonth;// calendar instances.
 
@@ -114,16 +133,16 @@ public class GYSTCalendar extends AppCompatActivity {
 
 
                 //TODO this is where we would find all the start dates
-                //This means that Utility.startDates needs to have all the dates for recurring events
+                //This means that startDates needs to have all the dates for recurring events
                 //this means that startdate.get(i) would return a list of dates for this event
                 //which we would then have to parse
-                for (int i = 0; i < Utility.startDates.size(); i++) {
+                for (int i = 0; i < startDates.size(); i++) {
                     //for int j
-                    //utility.startDates.get(i).get(j).equals(selectedGrideDate)
-                    //desc.add(Utility.nameOfEvent.get(i)
-                    if (Utility.startDates.get(i).equals(selectedGridDate)) {
-                        desc.add(Utility.nameOfEvent.get(i));
-                        location.add(Utility.locationOfEvent.get(i));
+                    //startDates.get(i).get(j).equals(selectedGrideDate)
+                    //desc.addnameOfEvent.get(i)
+                    if (startDates.get(i).equals(selectedGridDate)) {
+                        desc.add(nameOfEvent.get(i));
+                        location.add(locationOfEvent.get(i));
                     }
                 }
 
@@ -207,17 +226,85 @@ public class GYSTCalendar extends AppCompatActivity {
             // Print dates of the current week
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
             String itemvalue;
-            event = Utility.readCalendarEvent(GYSTCalendar.this);
+            event = readCalendarEvent(GYSTCalendar.this);
             Log.d("=====Event====", event.toString());
-            Log.d("=====Date ARRAY====", Utility.startDates.toString());
+            Log.d("=====Date ARRAY====", startDates.toString());
 
-            for (int i = 0; i < Utility.startDates.size(); i++) {
+            for (int i = 0; i < startDates.size(); i++) {
                 itemvalue = df.format(itemmonth.getTime());
                 itemmonth.add(GregorianCalendar.DATE, 1);
-                items.add(Utility.startDates.get(i).toString());
+                items.add(startDates.get(i).toString());
             }
             adapter.setItems(items);
             adapter.notifyDataSetChanged();
         }
     };
+    public String getDate(long milliSeconds) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(milliSeconds);
+        return formatter.format(calendar.getTime());
+    }
+    public ArrayList<String> readCalendarEvent(Context context) {
+        Cursor cursor = context.getContentResolver()
+                .query(Uri.parse("content://com.android.calendar/events"),
+                        new String[] { "calendar_id", "title", "description",
+                                "dtstart", "dtend", "eventLocation", "rdate" }, null,
+                        null, null);
+        cursor.moveToFirst();
+        // fetching calendars name
+        String CNames[] = new String[cursor.getCount()];
+
+        // fetching calendars id
+        nameOfEvent.clear();
+        startTime.clear();
+        startDates.clear();
+        endDates.clear();
+        locationOfEvent.clear();
+        descriptions.clear();
+        for (int i = 0; i < CNames.length; i++) {
+
+            nameOfEvent.add(cursor.getString(1));
+            startDates.add(getDate(cursor.getLong(3))); //this gives us the date
+            //here I would do more stuff to make startDates a list of lists
+            startTime.add(cursor.getLong(3));  //this gives us the time in milliseconds
+
+            endDates.add(getDate(cursor.getLong(4)));
+            descriptions.add(cursor.getString(2));
+            locationOfEvent.add(cursor.getString(5));
+            CNames[i] = cursor.getString(1);
+            cursor.moveToNext();
+
+        }
+
+        setAlarms();
+
+        return nameOfEvent;
+    }
+    public void setAlarms() {
+
+        for (int i = 0; i < nameOfEvent.size(); i++) {
+            //the second part of this if statement makes sure we are only creating alarms for future events
+            if ((!locationOfEvent.get(i).equals(""))&& (startTime.get(i)>System.currentTimeMillis())) {
+
+                long time = startTime.get(i);  //this is the time in milliseconds of the event
+                time= time - (15*60*1000);  //this sets the time to 15 min before start of event
+                int id = i;
+                String location=locationOfEvent.get(i);
+
+                Intent intent = new Intent(this, AlarmReceiver.class);
+                intent.putExtra("event_location", location);
+
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                        this.getApplicationContext(), id, intent, 0);
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, time, pendingIntent);  //creates alarm 15 min before event
+                //Toast.makeText(this, "Alarm set at " + getDate(time), Toast.LENGTH_LONG).show();
+               System.out.println("alarm set for " + nameOfEvent.get(id)+ " at " + getDate(time) + " located at " + location);
+
+
+            }
+
+        }
+    }
 }
