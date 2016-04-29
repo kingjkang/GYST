@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.telephony.SmsManager;
 
@@ -12,15 +14,17 @@ import android.telephony.SmsManager;
  */
 public class AlarmReceiver extends BroadcastReceiver
 {
-    Sunflower sun= new Sunflower();
+
     @Override
     public void onReceive(Context context, Intent intent) {
         //Currently this should sound an alarm 15 min before an event
         //it should just pop up a Toast with the location of the event
         Bundle bundle = intent.getExtras();
         String location = bundle.getString("event_location");
-        sun.attendedEvent();
         Toast.makeText(context, location, Toast.LENGTH_LONG).show();
+        attendedEvent();
+
+
 
         //get users
 
@@ -35,6 +39,21 @@ public class AlarmReceiver extends BroadcastReceiver
             we create a geofence that lasts for a total of 20 min)
          */
 
+    }
+
+    public void attendedEvent(){
+        Globals variables = Globals.getInstance();
+        int updatedStreak = 0;
+        updatedStreak = variables.getStreak() + 1;
+        variables.setStreak(updatedStreak);
+
+
+        int updatedPetals = variables.getPetals() + 1;
+        //This takes into account that the user has more than 20 petals
+        if(updatedPetals>20){
+            updatedPetals=20;
+        }
+        variables.setPetals(updatedPetals);
     }
 
 }

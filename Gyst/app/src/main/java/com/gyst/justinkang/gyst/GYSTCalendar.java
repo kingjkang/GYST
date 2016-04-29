@@ -202,6 +202,10 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            /*
+            Intent intent = new Intent(GYSTCalendar.this, Sunflower.class);
+            GYSTCalendar.this.startActivity(intent);
+            */
             super.onBackPressed();
         }
     }
@@ -349,7 +353,7 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
             cursor.moveToNext();
 
         }
-
+        System.out.println("called set alarms");
         setAlarms();
 
         return nameOfEvent;
@@ -361,7 +365,7 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
             if ((!locationOfEvent.get(i).equals(""))&& (startTime.get(i)>System.currentTimeMillis())) {
 
                 long time = startTime.get(i);  //this is the time in milliseconds of the event
-                time= time - (15*60*1000);  //this sets the time to 15 min before start of event
+
                 int id = i;
                 String location=locationOfEvent.get(i);
 

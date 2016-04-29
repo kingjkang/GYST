@@ -58,6 +58,11 @@ public class Sunflower extends android.app.Fragment{
             }
         });
 
+        TextView streak = (TextView) view.findViewById(R.id.streak);
+        streak.setText(Integer.toString(variables.getStreak()));
+        ImageView flower = (ImageView) view.findViewById(R.id.sunflower);
+        flower.setImageResource(chooseFlower());
+
         return view;
     }
 
@@ -72,7 +77,7 @@ public class Sunflower extends android.app.Fragment{
     public void attendedEvent(){
         updatedStreak = variables.getStreak() + 1;
         variables.setStreak(updatedStreak);
-        TextView streak = (TextView)getActivity().findViewById(R.id.streak);
+        TextView streak = (TextView) getActivity().findViewById(R.id.streak);
         streak.setText(Integer.toString(variables.getStreak()));
 
         int updatedPetals = variables.getPetals() + 1;
