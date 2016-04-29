@@ -139,10 +139,6 @@ public class CalendarActivity  extends Activity
                 ((CalendarAdapter) parent.getAdapter()).setSelected(v);
 
 
-                //TODO this is where we would find all the start dates
-                //This means that startDates needs to have all the dates for recurring events
-                //this means that startdate.get(i) would return a list of dates for this event
-                //which we would then have to parse
                 for (int i = 0; i < startDates.size(); i++) {
                     //for int j
                     //startDates.get(i).get(j).equals(selectedGrideDate)
@@ -158,7 +154,7 @@ public class CalendarActivity  extends Activity
                         TextView rowTextView = new TextView(CalendarActivity.this);
 
                         // set some properties of rowTextView or something
-                        rowTextView.setText(desc.get(i) + " at location: " + location.get(i));
+                        rowTextView.setText(desc.get(i));
                         rowTextView.setTextColor(Color.BLACK);
 
                         // add the textview to the linearlayout
@@ -196,6 +192,8 @@ public class CalendarActivity  extends Activity
     protected void onStart()
     {
         refreshCalendar();
+
+
         super.onStart();
     }
 
@@ -204,6 +202,8 @@ public class CalendarActivity  extends Activity
     protected void onResume()
     {
         refreshCalendar();
+
+        //clear listview
         super.onResume();
     }
     protected void setNextMonth() {
@@ -215,6 +215,7 @@ public class CalendarActivity  extends Activity
             month.set(GregorianCalendar.MONTH,
                     month.get(GregorianCalendar.MONTH) + 1);
         }
+        ((LinearLayout) rLayout).removeAllViews();
 
     }
 
@@ -227,6 +228,7 @@ public class CalendarActivity  extends Activity
             month.set(GregorianCalendar.MONTH,
                     month.get(GregorianCalendar.MONTH) - 1);
         }
+        ((LinearLayout) rLayout).removeAllViews();
 
     }
 
