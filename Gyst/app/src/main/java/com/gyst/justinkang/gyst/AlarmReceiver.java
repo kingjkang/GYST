@@ -65,8 +65,7 @@ public class AlarmReceiver extends BroadcastReceiver
             System.out.println("missedEvent");
             missedEvent();
         }
-        //LocationHelp helper= new LocationHelp();
-        //eventGeo = helper.getLocationFromAddress(location);
+
 
 
 
