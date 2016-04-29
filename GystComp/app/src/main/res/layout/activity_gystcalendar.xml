@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_gystcalendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_gystcalendar"
+        app:menu="@menu/activity_gystcalendar_drawer" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@mipmap/background"
+        android:orientation="vertical"
+        android:layout_below="@+id/nav_view"
+        android:layout_marginTop="60dp">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/calendar_top" >
+
+            <RelativeLayout
+                android:id="@+id/previous"
+                android:layout_width="40dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/arrow_left" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:textColor="#000000"
+                android:textSize="18dip"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/next"
+                android:layout_width="40dip"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/arrow_right" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/calendarLayout"
+            android:layout_below="@+id/header"
+            android:orientation="horizontal">
+            <GridView
+
+                android:id="@+id/gridview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="7"
+                android:stretchMode="columnWidth"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/text"
+            android:layout_below="@+id/calendarLayout"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="3dp">
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/AddCalendarEvent"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/add" />
+
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

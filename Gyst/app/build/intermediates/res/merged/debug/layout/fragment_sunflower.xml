@@ -41,10 +41,7 @@
         android:layout_height="wrap_content"
         android:text="Attended Event"
         android:id="@+id/attendedEvent"
-        android:layout_gravity="right|bottom"
-        />
-
-
+        android:layout_gravity="right|bottom" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
