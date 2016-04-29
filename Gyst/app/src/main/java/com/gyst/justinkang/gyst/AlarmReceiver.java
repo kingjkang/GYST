@@ -55,6 +55,20 @@ public class AlarmReceiver extends BroadcastReceiver
         }
         variables.setPetals(updatedPetals);
     }
+    public void missedEvent(){
+        Globals variables = Globals.getInstance();
+        int updatedStreak = 0;
+        variables.setStreak(0);
+
+
+        int updatedPetals = variables.getPetals() -1;
+        //this takes into account the user has less than 0 petals
+        if(updatedPetals<0){
+            updatedPetals=0;
+        }
+        variables.setPetals(updatedPetals);
+        
+    }
 
 }
 
