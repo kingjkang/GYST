@@ -86,7 +86,7 @@ public class Sunflower extends android.app.Fragment{
     }
     public void missedEvent(){
         variables.setStreak(0);
-        TextView streak = (TextView)getActivity().findViewById(R.id.streak);
+        TextView streak = (TextView) getActivity().findViewById(R.id.streak);
         streak.setText(Integer.toString(variables.getStreak()));
 
         int updatedPetals = variables.getPetals() -1;

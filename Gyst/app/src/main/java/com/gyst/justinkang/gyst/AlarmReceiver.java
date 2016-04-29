@@ -12,13 +12,18 @@ import android.telephony.SmsManager;
  */
 public class AlarmReceiver extends BroadcastReceiver
 {
+    Sunflower sun= new Sunflower();
     @Override
     public void onReceive(Context context, Intent intent) {
         //Currently this should sound an alarm 15 min before an event
         //it should just pop up a Toast with the location of the event
         Bundle bundle = intent.getExtras();
         String location = bundle.getString("event_location");
+        sun.attendedEvent();
         Toast.makeText(context, location, Toast.LENGTH_LONG).show();
+
+        //get users
+
         //TODO make this more functional
         /*
 
