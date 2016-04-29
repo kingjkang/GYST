@@ -19,6 +19,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -191,6 +192,20 @@ public class CalendarActivity  extends Activity
         });
 
     }
+    @Override
+    protected void onStart()
+    {
+        refreshCalendar();
+        super.onStart();
+    }
+
+
+    @Override
+    protected void onResume()
+    {
+        refreshCalendar();
+        super.onResume();
+    }
     protected void setNextMonth() {
         if (month.get(GregorianCalendar.MONTH) == month
                 .getActualMaximum(GregorianCalendar.MONTH)) {
@@ -316,7 +331,7 @@ public class CalendarActivity  extends Activity
         return nameOfEvent;
     }
 
-    //TODO this is bad
+
     public GeoPoint getLocationFromAddress(String strAddress){
         System.out.println("getLocationFromAddress loc: " + strAddress);
         Geocoder coder = new Geocoder(this);
