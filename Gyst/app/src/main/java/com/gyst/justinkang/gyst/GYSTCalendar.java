@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
 
 import android.content.Intent;
@@ -17,6 +18,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -55,6 +58,8 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
     public static ArrayList<String> descriptions = new ArrayList<String>();
     public static ArrayList<String> locationOfEvent = new ArrayList<String>();
     public static ArrayList<String> recurringDates = new ArrayList<String>();
+    //public static ArrayList<Double> eventLat=new ArrayList<Double>();
+    //public static ArrayList<Double> eventLong=new ArrayList<Double>();
 
     public GregorianCalendar month, itemmonth;// calendar instances.
 
@@ -344,6 +349,10 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
         endDates.clear();
         locationOfEvent.clear();
         descriptions.clear();
+        //eventLat.clear();
+        //eventLong.clear();
+        String tempLoc;
+        GeoPoint tempGeo= new GeoPoint(0,0);
         for (int i = 0; i < CNames.length; i++) {
 
             nameOfEvent.add(cursor.getString(1));
@@ -354,6 +363,23 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
             endDates.add(getDate(cursor.getLong(4)));
             descriptions.add(cursor.getString(2));
             locationOfEvent.add(cursor.getString(5));
+            //tempLoc=cursor.getString(5);
+            //tempGeo=getLocationFromAddress(tempLoc);
+
+
+            /*
+            if(tempGeo == null){
+
+                eventLat.add(0.0);
+                eventLong.add(0.0);
+            }
+            else {
+                eventLat.add(tempGeo.getLatitude());
+                eventLong.add(tempGeo.getLongitude());
+            }
+            */
+
+
             CNames[i] = cursor.getString(1);
             cursor.moveToNext();
 
@@ -363,6 +389,38 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
 
         return nameOfEvent;
     }
+
+    //TODO this is bad
+    public GeoPoint getLocationFromAddress(String strAddress){
+        System.out.println("getLocationFromAddress loc: " + strAddress);
+        Geocoder coder = new Geocoder(this);
+        List<Address> address;
+        GeoPoint p1 = null;
+
+        try {
+            address = coder.getFromLocationName(strAddress,1);
+            if ((address==null)||(address.size()==0)) {
+                return null;
+            }
+
+            Address location = address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new GeoPoint((double) (location.getLatitude()),  //removed *1E6
+                    (double) (location.getLongitude()));        ////removed *1E6
+
+            return p1;
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return p1;
+    }
+
+
+
+
     public void setAlarms() {
 
         for (int i = 0; i < nameOfEvent.size(); i++) {
@@ -373,9 +431,13 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
 
                 int id = i;
                 String location=locationOfEvent.get(i);
-
+                GeoPoint tempGeo=getLocationFromAddress(location);
+                Double eventLatitude= tempGeo.getLatitude();
+                Double eventLongitude=tempGeo.getLongitude();
                 Intent intent = new Intent(this, AlarmReceiver.class);
                 intent.putExtra("event_location", location);
+                intent.putExtra("event_latitude", eventLatitude);
+                intent.putExtra("event_longitude", eventLongitude);
 
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(
                         this.getApplicationContext(), id, intent, 0);

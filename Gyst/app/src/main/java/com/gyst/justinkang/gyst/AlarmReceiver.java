@@ -27,13 +27,14 @@ public class AlarmReceiver extends BroadcastReceiver
         //it should just pop up a Toast with the location of the event
         Bundle bundle = intent.getExtras();
         String location = bundle.getString("event_location");
-
+        Double eventLat = bundle.getDouble("event_latitude");
+        Double eventLon = bundle.getDouble("event_longitude");
         Toast.makeText(context, location, Toast.LENGTH_LONG).show();
 
 
-        double lat = 30.2884386;
-        double lon = -97.73686636;
-        GeoPoint eventGeo= new GeoPoint(lat, lon);
+        //double lat = 30.2884386;
+        //double lon = -97.73686636;
+        GeoPoint eventGeo= new GeoPoint(eventLat, eventLon);
         //eventGeo.setLatitude(lat);
         //eventGeo.setLongitude(lon);
 
@@ -55,7 +56,7 @@ public class AlarmReceiver extends BroadcastReceiver
         System.out.println("event location, latitude: " + locationB.getLatitude() + " longitude: " + locationB.getLongitude());
         float distance = locationA.distanceTo(locationB);
         System.out.println("distance between = " + distance);
-        float maxDist= 500;
+        float maxDist= 5000;
         if(distance<= maxDist){
             System.out.println("attendedEvent");
             attendedEvent();
@@ -64,8 +65,7 @@ public class AlarmReceiver extends BroadcastReceiver
             System.out.println("missedEvent");
             missedEvent();
         }
-        //LocationHelp helper= new LocationHelp();
-        //eventGeo = helper.getLocationFromAddress(location);
+
 
 
 
@@ -108,9 +108,6 @@ public class AlarmReceiver extends BroadcastReceiver
 
         int updatedPetals = variables.getPetals() + 1;
         //This takes into account that the user has more than 20 petals
-        if(updatedPetals>20){
-            updatedPetals=20;
-        }
         variables.setPetals(updatedPetals);
     }
     public void missedEvent(){
