@@ -358,19 +358,28 @@ public class CalendarActivity  extends Activity
                 int id = i;
                 String location=locationOfEvent.get(i);
                 GeoPoint tempGeo=getLocationFromAddress(location);
-                Double eventLatitude= tempGeo.getLatitude();
-                Double eventLongitude=tempGeo.getLongitude();
-                Intent intent = new Intent(this, AlarmReceiver.class);
-                intent.putExtra("event_location", location);
-                intent.putExtra("event_latitude", eventLatitude);
-                intent.putExtra("event_longitude", eventLongitude);
+                if(tempGeo!=null) {
+                    Double eventLatitude = tempGeo.getLatitude();
+                    Double eventLongitude = tempGeo.getLongitude();
+                    Intent intent = new Intent(this, AlarmReceiver.class);
+                    intent.putExtra("event_location", location);
+                    intent.putExtra("event_title", nameOfEvent.get(i));
+                    intent.putExtra("event_latitude", eventLatitude);
+                    intent.putExtra("event_longitude", eventLongitude);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                            this.getApplicationContext(), id, intent, 0);
+                    AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, time, pendingIntent);  //creates alarm 15 min before event
+                    System.out.println("alarm set for " + nameOfEvent.get(id) + " at " + getDate(time) + " located at " + location);
+                }
+                else{
+                    System.out.println("Geocoder error, no alarm set");
+                    Toast.makeText(this, "Location Error for " + nameOfEvent.get(i), Toast.LENGTH_LONG).show();  //if geocoder cant find lat/lon for address
+                }
 
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                        this.getApplicationContext(), id, intent, 0);
-                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-                alarmManager.set(AlarmManager.RTC_WAKEUP, time, pendingIntent);  //creates alarm 15 min before event
+
                 //Toast.makeText(this, "Alarm set at " + getDate(time), Toast.LENGTH_LONG).show();
-                System.out.println("alarm set for " + nameOfEvent.get(id)+ " at " + getDate(time) + " located at " + location);
+                //System.out.println("alarm set for " + nameOfEvent.get(id)+ " at " + getDate(time) + " located at " + location);
 
 
             }

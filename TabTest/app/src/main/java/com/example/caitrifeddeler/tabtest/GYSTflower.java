@@ -20,19 +20,7 @@ public class GYSTflower extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_gystflower);
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
-        //This is what happens when an event is attended
+
         Button attendedButton = (Button) findViewById(R.id.attendedEvent);
         attendedButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +43,28 @@ public class GYSTflower extends Activity {
         streak.setText(Integer.toString(variables.getStreak()));
         ImageView flower = (ImageView) findViewById(R.id.sunflower);
         flower.setImageResource(chooseFlower());
+    }
+    @Override
+    protected void onStart()
+    {
+        // TODO Auto-generated method stub
+        TextView streak = (TextView) findViewById(R.id.streak);
+        streak.setText(Integer.toString(variables.getStreak()));
+        ImageView flower = (ImageView) findViewById(R.id.sunflower);
+        flower.setImageResource(chooseFlower());
+        super.onStart();
+    }
+
+
+    @Override
+    protected void onResume()
+    {
+        // TODO Auto-generated method stub
+        TextView streak = (TextView) findViewById(R.id.streak);
+        streak.setText(Integer.toString(variables.getStreak()));
+        ImageView flower = (ImageView) findViewById(R.id.sunflower);
+        flower.setImageResource(chooseFlower());
+        super.onResume();
     }
 
     public void attendedEvent(){

@@ -63,6 +63,8 @@ public class MainActivity extends TabActivity
                 .setBackgroundColor(Color.parseColor("#D6EBF2"));
         tabHost.getTabWidget().getChildAt(2)
                 .setBackgroundColor(Color.parseColor("#D6EBF2"));
+
+
         storageLocker = getSharedPreferences(storage, Context.MODE_PRIVATE);
         int s = storageLocker.getInt(storeStreak, 0);
         int p = storageLocker.getInt(storePetals, 0);
@@ -94,5 +96,14 @@ public class MainActivity extends TabActivity
         editor.putInt(storeStreak, s);
         editor.putInt(storePetals, p);
         editor.apply();
+    }
+
+    public void onStart(){
+        super.onStart();
+        storageLocker = getSharedPreferences(storage, Context.MODE_PRIVATE);
+        int s = storageLocker.getInt(storeStreak, 0);
+        int p = storageLocker.getInt(storePetals, 0);
+        variables.setStreak(s);
+        variables.setPetals(p);
     }
 }

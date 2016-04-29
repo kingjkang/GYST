@@ -25,10 +25,11 @@ public class AlarmReceiver extends BroadcastReceiver
         //Currently this should sound an alarm 15 min before an event
         //it should just pop up a Toast with the location of the event
         Bundle bundle = intent.getExtras();
+        String title = bundle.getString("event_title");
         String location = bundle.getString("event_location");
         Double eventLat = bundle.getDouble("event_latitude");
         Double eventLon = bundle.getDouble("event_longitude");
-        Toast.makeText(context, location, Toast.LENGTH_LONG).show();
+
 
 
         //double lat = 30.2884386;
@@ -58,10 +59,12 @@ public class AlarmReceiver extends BroadcastReceiver
         float maxDist= 5000;
         if(distance<= maxDist){
             System.out.println("attendedEvent");
+            Toast.makeText(context, "attended " + title, Toast.LENGTH_LONG).show();
             attendedEvent();
         }
         else{
             System.out.println("missedEvent");
+            Toast.makeText(context, "missed " + title, Toast.LENGTH_LONG).show();
             missedEvent();
         }
 
