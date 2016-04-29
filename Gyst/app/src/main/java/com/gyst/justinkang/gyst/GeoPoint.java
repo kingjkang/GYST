@@ -4,17 +4,24 @@ package com.gyst.justinkang.gyst;
  * Created by CaitriFeddeler on 4/24/16.
  */
 public class GeoPoint {
-    private int latitude;
-    private int longitude;
+    private double latitude;
+    private double longitude;
 
-    public GeoPoint(int lat, int lon){
+    public GeoPoint(double lat, double lon){
         this.latitude=lat;
         this.longitude=lon;
     }
-    public int getLatitude(){
+    public void setLatitude(double lat){
+        this.latitude=lat;
+    }
+    public void setLongitude(double lon){
+        this.longitude=lon;
+    }
+    public double getLatitude(){
         return this.latitude;
     }
-    public int getLongitude(){
+
+    public double getLongitude(){
         return this.longitude;
     }
 }

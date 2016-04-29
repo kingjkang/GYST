@@ -8,12 +8,12 @@
         "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_manage.png"
     },
     {
-        "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_menu_send.png",
-        "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_send.png"
-    },
-    {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_menu_share.png",
         "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_share.png"
+    },
+    {
+        "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_menu_send.png",
+        "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_send.png"
     },
     {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_menu_slideshow.png",

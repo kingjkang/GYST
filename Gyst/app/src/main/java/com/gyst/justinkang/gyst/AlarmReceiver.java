@@ -1,19 +1,25 @@
 package com.gyst.justinkang.gyst;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
-import android.telephony.SmsManager;
 
 /**
  * Created by CaitriFeddeler on 4/21/16.
  */
 public class AlarmReceiver extends BroadcastReceiver
 {
+    private LocationManager locationManager;
+    private String provider;
+    Globals variables = Globals.getInstance();
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -21,8 +27,60 @@ public class AlarmReceiver extends BroadcastReceiver
         //it should just pop up a Toast with the location of the event
         Bundle bundle = intent.getExtras();
         String location = bundle.getString("event_location");
+
         Toast.makeText(context, location, Toast.LENGTH_LONG).show();
-        attendedEvent();
+
+
+        double lat = 30.2884386;
+        double lon = -97.73686636;
+        GeoPoint eventGeo= new GeoPoint(lat, lon);
+        //eventGeo.setLatitude(lat);
+        //eventGeo.setLongitude(lon);
+
+        GeoPoint userGeo=new GeoPoint(variables.getUserLat(), variables.getUserLong());
+
+
+
+       //BELOW IS CORRECT
+
+        Location locationA = new Location("point A");
+        locationA.setLatitude(userGeo.getLatitude());
+        locationA.setLongitude(userGeo.getLongitude());
+
+        Location locationB = new Location("point B");
+        locationB.setLatitude(eventGeo.getLatitude());
+        locationB.setLongitude(eventGeo.getLongitude());
+
+        System.out.println("user location, latitude: " + locationA.getLatitude() + " longitude: " + locationA.getLongitude());
+        System.out.println("event location, latitude: " + locationB.getLatitude() + " longitude: " + locationB.getLongitude());
+        float distance = locationA.distanceTo(locationB);
+        System.out.println("distance between = " + distance);
+        float maxDist= 500;
+        if(distance<= maxDist){
+            System.out.println("attendedEvent");
+            attendedEvent();
+        }
+        else{
+            System.out.println("missedEvent");
+            missedEvent();
+        }
+        //LocationHelp helper= new LocationHelp();
+        //eventGeo = helper.getLocationFromAddress(location);
+
+
+
+
+        //Now read users location
+
+        //System.out.println("Latitude : "+ eventGeo.getLatitude());
+       // System.out.println("Longitude : "+ eventGeo.getLongitude());
+
+
+        //convert event location to GeoPoint using location getFromAddress
+        //now we read users location
+        //compare user to event location using the function ....TODO
+        //then if distance is less than .... attended() if not missed()
+       // attendedEvent();
 
 
 
@@ -67,7 +125,7 @@ public class AlarmReceiver extends BroadcastReceiver
             updatedPetals=0;
         }
         variables.setPetals(updatedPetals);
-        
+
     }
 
 }

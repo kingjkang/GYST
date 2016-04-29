@@ -36,6 +36,8 @@
         </activity>
         <activity android:name="GYSTCalendar" />
         <activity android:name="Utility"/>
+        <activity android:name="LocationActivity"/>
+        <activity android:name="LocationHelp"/>
         <receiver android:name="AlarmReceiver" >
         </receiver>
         <!--service android:name=".GeofenceTransitionsIntentService"/>-->

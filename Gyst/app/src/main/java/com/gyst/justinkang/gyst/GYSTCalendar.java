@@ -190,8 +190,13 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
         addCalendarEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                  */
+                Intent intent = new Intent(GYSTCalendar.this, LocationActivity.class);
+                GYSTCalendar.this.startActivity(intent);
+
             }
         });
     }

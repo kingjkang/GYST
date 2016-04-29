@@ -18,6 +18,8 @@ public class Globals extends Application{
 
     private int streak;
     private int petals;
+    private double userLat;
+    private double userLong;
 
 
     private Globals (){}
@@ -36,12 +38,28 @@ public class Globals extends Application{
         return this.streak;
     }
 
+
     public void setPetals (int i) {
         this.petals = i;
      //   sun.update();
     }
 
     public int getPetals () { return this.petals; }
+
+    public double getUserLat(){
+        return this.userLat;
+    }
+
+    public void setUserLat(double lat){
+        this.userLat=lat;
+    }
+    public double getUserLong(){
+        return this.userLong;
+    }
+
+    public void setUserLong(double lon){
+        this.userLong=lon;
+    }
 
     public static synchronized Globals getInstance(){
         //this function returns the instsance of that object if it is already existing, or
