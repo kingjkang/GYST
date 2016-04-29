@@ -4,7 +4,10 @@
 "Either you run the day or the day runs you." — Jim Rohn
 "Begin to be now what you will be hereafter." — William James
 "If you don’t like how things are, change it! You’re not a tree." — Jim Rohn
+
+
 "Be Brave, go forth & conquer." - Unknown
 "Your time is limited, so don’t waste it living someone else’s life." — Steve Jobs
 "Believe that you can and you’re half way there." — Theodore Roosevelt
-"We are still masters of our fate.  We are still captains of our souls." — Winston Churchill
+"We are still masters of our fate.  We are still
+ captains of our souls." — Winston Churchill

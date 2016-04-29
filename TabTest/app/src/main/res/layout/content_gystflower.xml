@@ -16,17 +16,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="30dp"
-        android:text="Streak: " />
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="25dp"
+        android:text="Streak: "
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/streak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="25dp"
         android:text="0"
-        android:layout_gravity="left|top" />
+        android:layout_gravity="left|top"
+        android:textSize="20sp"/>
 
     <ImageView
         android:id="@+id/sunflower"
@@ -36,7 +40,8 @@
         android:src="@mipmap/sunflower0"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginTop="-20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +50,7 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_centerHorizontal="true"
         android:text="MOTIVATIONAL QUOTE GOES HERE"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="40dp"
         android:textAlignment="center"/>
 
     <TextView
