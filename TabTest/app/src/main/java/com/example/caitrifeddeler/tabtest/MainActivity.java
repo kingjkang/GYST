@@ -5,6 +5,7 @@ import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -32,7 +33,7 @@ public class MainActivity extends TabActivity
         setContentView(R.layout.content_main);
 
         // create the TabHost that will contain the Tabs
-        TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
+        final TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
 
 
         TabSpec tab1 = tabHost.newTabSpec("First Tab");
@@ -45,21 +46,43 @@ public class MainActivity extends TabActivity
         tab1.setContent(new Intent(this, GYSTflower.class));
 
         tab2.setIndicator("Calendar");
-        tab2.setContent(new Intent(this,CalendarActivity.class));
+
+        tab2.setContent(new Intent(this, CalendarActivity.class));
 
         tab3.setIndicator("Location");
-        tab3.setContent(new Intent(this,LocationActivity.class));
+        tab3.setContent(new Intent(this, LocationActivity.class));
 
         /** Add the tabs  to the TabHost to display. */
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
-
+        //tabHost.getTabWidget().getChildAt(0).setBackgroundColor(Color.LTGRAY);
+        tabHost.getTabWidget().getChildAt(0)
+                .setBackgroundColor(Color.parseColor("#ADD8E6"));
+        tabHost.getTabWidget().getChildAt(1)
+                .setBackgroundColor(Color.parseColor("#D6EBF2"));
+        tabHost.getTabWidget().getChildAt(2)
+                .setBackgroundColor(Color.parseColor("#D6EBF2"));
         storageLocker = getSharedPreferences(storage, Context.MODE_PRIVATE);
         int s = storageLocker.getInt(storeStreak, 0);
         int p = storageLocker.getInt(storePetals, 0);
         variables.setStreak(s);
         variables.setPetals(p);
+
+        tabHost.setOnTabChangedListener(new OnTabChangeListener() {
+
+            @Override
+            public void onTabChanged(String tabId) {
+
+                for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
+                    tabHost.getTabWidget().getChildAt(i)
+                            .setBackgroundColor(Color.parseColor("#D6EBF2")); // unselected
+                }
+                tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab())
+                        .setBackgroundColor(Color.parseColor("#ADD8E6")); // selected
+
+            }
+        });
     }
 
     public void onStop(){

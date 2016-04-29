@@ -23,13 +23,15 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:text="GYST"/>
-
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent">
-        </TabWidget>
-
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent">
+            </TabWidget>
+        </RelativeLayout>
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_height="fill_parent"

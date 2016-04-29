@@ -12,6 +12,7 @@ import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.Gravity;
@@ -177,14 +178,14 @@ public class CalendarActivity  extends Activity
         addCalendarEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                  */
-                /*
-                Intent intent = new Intent(CalendarActivity.this, LocationActivity.class);
-                CalendarActivity.this.startActivity(intent);
-                */
+
+
+
+// Insert Event
+                Intent intent = new Intent(Intent.ACTION_INSERT)
+                        .setType("vnd.android.cursor.item/event");
+
+                startActivity(intent);
 
             }
         });
