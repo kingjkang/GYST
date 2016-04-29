@@ -14,9 +14,15 @@
         android:layout_width="fill_parent">
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="0dp"
             android:layout_gravity="center"
-            android:text="text"/>
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="GYST"/>
 
         <TabWidget
             android:id="@android:id/tabs"
