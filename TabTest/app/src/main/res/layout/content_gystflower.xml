@@ -45,6 +45,16 @@
         android:layout_gravity="center_horizontal|bottom"
         android:layout_centerHorizontal="true"
         android:text="MOTIVATIONAL QUOTE GOES HERE"
+        android:layout_marginBottom="45dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/motivationalAuthor"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_centerHorizontal="true"
+        android:text="MOTIVATIONAL Author GOES HERE"
         android:textAlignment="center"/>
     <!--<Button-->
         <!--style="?android:attr/buttonStyleSmall"-->

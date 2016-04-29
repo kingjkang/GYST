@@ -41,12 +41,17 @@ public class GYSTflower extends Activity {
 //            }
 //        });
 
+        Random qq = new Random();
+        int  quoteNum = qq.nextInt(10) + 1;
+
         TextView streak = (TextView) findViewById(R.id.streak);
         streak.setText(Integer.toString(variables.getStreak()));
         ImageView flower = (ImageView) findViewById(R.id.sunflower);
         flower.setImageResource(chooseFlower());
         TextView quote = (TextView) findViewById(R.id.motivationalQuote);
-        quote.setText(chooseQuote());
+        quote.setText(chooseQuote(quoteNum));
+        TextView author = (TextView) findViewById(R.id.motivationalAuthor);
+        author.setText(chooseAuthor(quoteNum));
     }
     @Override
     protected void onStart()
@@ -172,10 +177,7 @@ public class GYSTflower extends Activity {
         }
     }
 
-    public int chooseQuote(){
-        Random qq = new Random();
-        int  quoteNum = qq.nextInt(10) + 1;
-
+    public int chooseQuote(int quoteNum){
         if (quoteNum == 1){
             return R.string.q1;
         }
@@ -207,5 +209,39 @@ public class GYSTflower extends Activity {
             return R.string.q10;
         }
     }
+
+    public int chooseAuthor(int quoteNum){
+        if (quoteNum == 1){
+            return R.string.a1;
+        }
+        else if(quoteNum == 2){
+            return R.string.a2;
+        }
+        else if(quoteNum == 3){
+            return R.string.a3;
+        }
+        else if(quoteNum == 4){
+            return R.string.a4;
+        }
+        else if(quoteNum == 5){
+            return R.string.a5;
+        }
+        else if(quoteNum == 6){
+            return R.string.a6;
+        }
+        else if(quoteNum == 7){
+            return R.string.a7;
+        }
+        else if(quoteNum == 8){
+            return R.string.a8;
+        }
+        else if(quoteNum == 9){
+            return R.string.q9;
+        }
+        else{
+            return R.string.a10;
+        }
+    }
+
 }
 
