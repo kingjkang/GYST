@@ -2,4 +2,14 @@
     <string name="app_name">TabTest</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_gystflower">GYSTflower</string>
+    <string name="q1">quoteOne</string>
+    <string name="q2">quoteTwo</string>
+    <string name="q3">quoteThree</string>
+    <string name="q4">quoteFour</string>
+    <string name="q5">quoteFive</string>
+    <string name="q6">quoteSix</string>
+    <string name="q7">quoteSeven</string>
+    <string name="q8">quoteEight</string>
+    <string name="q9">quoteNine</string>
+    <string name="q10">quoteTen</string>
 </resources>

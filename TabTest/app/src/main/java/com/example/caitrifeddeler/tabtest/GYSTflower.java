@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class GYSTflower extends Activity {
 
     Globals variables = Globals.getInstance();
@@ -21,28 +23,30 @@ public class GYSTflower extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_gystflower);
 
-        Button attendedButton = (Button) findViewById(R.id.attendedEvent);
-        attendedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                attendedEvent();
-            }
-        });
-
-
-        //This is what happens when an event is missed
-        Button missedButton = (Button) findViewById(R.id.missedEvent);
-        missedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                missedEvent();
-            }
-        });
+//        Button attendedButton = (Button) findViewById(R.id.attendedEvent);
+//        attendedButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                attendedEvent();
+//            }
+//        });
+//
+//
+//        //This is what happens when an event is missed
+//        Button missedButton = (Button) findViewById(R.id.missedEvent);
+//        missedButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                missedEvent();
+//            }
+//        });
 
         TextView streak = (TextView) findViewById(R.id.streak);
         streak.setText(Integer.toString(variables.getStreak()));
         ImageView flower = (ImageView) findViewById(R.id.sunflower);
         flower.setImageResource(chooseFlower());
+        TextView quote = (TextView) findViewById(R.id.motivationalQuote);
+        quote.setText(chooseQuote());
     }
     @Override
     protected void onStart()
@@ -168,4 +172,40 @@ public class GYSTflower extends Activity {
         }
     }
 
+    public int chooseQuote(){
+        Random qq = new Random();
+        int  quoteNum = qq.nextInt(10) + 1;
+
+        if (quoteNum == 1){
+            return R.string.q1;
+        }
+        else if(quoteNum == 2){
+            return R.string.q2;
+        }
+        else if(quoteNum == 3){
+            return R.string.q3;
+        }
+        else if(quoteNum == 4){
+            return R.string.q4;
+        }
+        else if(quoteNum == 5){
+            return R.string.q5;
+        }
+        else if(quoteNum == 6){
+            return R.string.q6;
+        }
+        else if(quoteNum == 7){
+            return R.string.q7;
+        }
+        else if(quoteNum == 8){
+            return R.string.q8;
+        }
+        else if(quoteNum == 9){
+            return R.string.q9;
+        }
+        else{
+            return R.string.q10;
+        }
+    }
 }
+
