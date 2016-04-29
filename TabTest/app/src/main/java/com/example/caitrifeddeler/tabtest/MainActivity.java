@@ -41,13 +41,13 @@ public class MainActivity extends TabActivity
 
         // Set the Tab name and Activity
         // that will be opened when particular Tab will be selected
-        tab1.setIndicator("Tab1");
+        tab1.setIndicator("Home");
         tab1.setContent(new Intent(this, GYSTflower.class));
 
-        tab2.setIndicator("Tab2");
+        tab2.setIndicator("Calendar");
         tab2.setContent(new Intent(this,CalendarActivity.class));
 
-        tab3.setIndicator("Tab3");
+        tab3.setIndicator("Location");
         tab3.setContent(new Intent(this,LocationActivity.class));
 
         /** Add the tabs  to the TabHost to display. */
