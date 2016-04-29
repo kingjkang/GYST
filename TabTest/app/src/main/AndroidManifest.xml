@@ -36,7 +36,6 @@
         </activity>
         <activity android:name=".CalendarActivity" />
         <activity android:name=".LocationActivity" />
-        <activity android:name=".SunflowerActivity" />
 
         <receiver android:name=".AlarmReceiver"></receiver>
 
