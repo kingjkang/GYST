@@ -41,17 +41,12 @@ public class CalendarActivity  extends Activity
 
     public static ArrayList<String> nameOfEvent = new ArrayList<String>();
 
-    //startdates should really be an arraylist of arraylists
-    //so get(i) returns a list of dates responding to event i
-    //startDates.get(i).get(5) returns the date of the 5th occurance of the event i;
     public static ArrayList<String> startDates = new ArrayList<String>();
     public static ArrayList<Long> startTime = new ArrayList<Long>();
     public static ArrayList<String> endDates = new ArrayList<String>();
     public static ArrayList<String> descriptions = new ArrayList<String>();
     public static ArrayList<String> locationOfEvent = new ArrayList<String>();
-    public static ArrayList<String> recurringDates = new ArrayList<String>();
-    //public static ArrayList<Double> eventLat=new ArrayList<Double>();
-    //public static ArrayList<Double> eventLong=new ArrayList<Double>();
+
 
     public GregorianCalendar month, itemmonth;// calendar instances.
 
@@ -140,9 +135,7 @@ public class CalendarActivity  extends Activity
 
 
                 for (int i = 0; i < startDates.size(); i++) {
-                    //for int j
-                    //startDates.get(i).get(j).equals(selectedGrideDate)
-                    //desc.addnameOfEvent.get(i)
+
                     if (startDates.get(i).equals(selectedGridDate)) {
                         desc.add(nameOfEvent.get(i));
                         location.add(locationOfEvent.get(i));
@@ -306,21 +299,7 @@ public class CalendarActivity  extends Activity
             endDates.add(getDate(cursor.getLong(4)));
             descriptions.add(cursor.getString(2));
             locationOfEvent.add(cursor.getString(5));
-            //tempLoc=cursor.getString(5);
-            //tempGeo=getLocationFromAddress(tempLoc);
 
-
-            /*
-            if(tempGeo == null){
-
-                eventLat.add(0.0);
-                eventLong.add(0.0);
-            }
-            else {
-                eventLat.add(tempGeo.getLatitude());
-                eventLong.add(tempGeo.getLongitude());
-            }
-            */
 
 
             CNames[i] = cursor.getString(1);
@@ -393,12 +372,6 @@ public class CalendarActivity  extends Activity
                     System.out.println("Geocoder error, no alarm set");
                     Toast.makeText(this, "Location Error for " + nameOfEvent.get(i), Toast.LENGTH_LONG).show();  //if geocoder cant find lat/lon for address
                 }
-
-
-                //Toast.makeText(this, "Alarm set at " + getDate(time), Toast.LENGTH_LONG).show();
-                //System.out.println("alarm set for " + nameOfEvent.get(id)+ " at " + getDate(time) + " located at " + location);
-
-
             }
 
         }
