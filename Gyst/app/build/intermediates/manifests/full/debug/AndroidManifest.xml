@@ -49,7 +49,6 @@
         <activity android:name="com.gyst.justinkang.gyst.GYSTCalendar" />
         <activity android:name="com.gyst.justinkang.gyst.Utility" />
         <activity android:name="com.gyst.justinkang.gyst.LocationActivity" />
-        <activity android:name="com.gyst.justinkang.gyst.LocationHelp" />
 
         <receiver android:name="com.gyst.justinkang.gyst.AlarmReceiver" >
         </receiver>

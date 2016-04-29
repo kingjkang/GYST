@@ -228,10 +228,6 @@ activity#com.gyst.justinkang.gyst.LocationActivity
 ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST6/GYST/Gyst/app/src/main/AndroidManifest.xml:39:9-52
 	android:name
 		ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST6/GYST/Gyst/app/src/main/AndroidManifest.xml:39:19-50
-activity#com.gyst.justinkang.gyst.LocationHelp
-ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST6/GYST/Gyst/app/src/main/AndroidManifest.xml:40:9-48
-	android:name
-		ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST6/GYST/Gyst/app/src/main/AndroidManifest.xml:40:19-46
 receiver#com.gyst.justinkang.gyst.AlarmReceiver
 ADDED from /Users/justinkang/Documents/Spring2016/EE461L/GYST6/GYST/Gyst/app/src/main/AndroidManifest.xml:41:9-42:20
 	android:name
