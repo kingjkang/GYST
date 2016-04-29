@@ -43,25 +43,32 @@ public class GYSTflower extends Activity {
 
         Random qq = new Random();
         int  quoteNum = qq.nextInt(10) + 1;
+        TextView quote = (TextView) findViewById(R.id.motivationalQuote);
+        quote.setText(chooseQuote(quoteNum));
+        TextView author = (TextView) findViewById(R.id.motivationalAuthor);
+        author.setText(chooseAuthor(quoteNum));
 
         TextView streak = (TextView) findViewById(R.id.streak);
         streak.setText(Integer.toString(variables.getStreak()));
         ImageView flower = (ImageView) findViewById(R.id.sunflower);
         flower.setImageResource(chooseFlower());
-        TextView quote = (TextView) findViewById(R.id.motivationalQuote);
-        quote.setText(chooseQuote(quoteNum));
-        TextView author = (TextView) findViewById(R.id.motivationalAuthor);
-        author.setText(chooseAuthor(quoteNum));
     }
     @Override
     protected void onStart()
     {
+        super.onStart();
         // TODO Auto-generated method stub
         TextView streak = (TextView) findViewById(R.id.streak);
         streak.setText(Integer.toString(variables.getStreak()));
         ImageView flower = (ImageView) findViewById(R.id.sunflower);
         flower.setImageResource(chooseFlower());
-        super.onStart();
+
+        Random qq = new Random();
+        int  quoteNum = qq.nextInt(10) + 1;
+        TextView quote = (TextView) findViewById(R.id.motivationalQuote);
+        quote.setText(chooseQuote(quoteNum));
+        TextView author = (TextView) findViewById(R.id.motivationalAuthor);
+        author.setText(chooseAuthor(quoteNum));
     }
 
 
@@ -236,7 +243,7 @@ public class GYSTflower extends Activity {
             return R.string.a8;
         }
         else if(quoteNum == 9){
-            return R.string.q9;
+            return R.string.a9;
         }
         else{
             return R.string.a10;
