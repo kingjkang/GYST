@@ -39,7 +39,11 @@ public class LocationActivity extends Activity implements LocationListener {
         // Define the criteria how to select the locatioin provider -> use
         // default
         Criteria criteria = new Criteria();
-        provider = locationManager.getBestProvider(criteria, false);
+
+
+        //TODO uncomment
+        // provider = locationManager.getBestProvider(criteria, false);
+        provider = LocationManager.NETWORK_PROVIDER;
 
         if(ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_CALENDAR)==PackageManager.PERMISSION_GRANTED){

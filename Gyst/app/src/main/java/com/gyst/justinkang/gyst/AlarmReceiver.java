@@ -56,7 +56,7 @@ public class AlarmReceiver extends BroadcastReceiver
         System.out.println("event location, latitude: " + locationB.getLatitude() + " longitude: " + locationB.getLongitude());
         float distance = locationA.distanceTo(locationB);
         System.out.println("distance between = " + distance);
-        float maxDist= 500;
+        float maxDist= 5000;
         if(distance<= maxDist){
             System.out.println("attendedEvent");
             attendedEvent();

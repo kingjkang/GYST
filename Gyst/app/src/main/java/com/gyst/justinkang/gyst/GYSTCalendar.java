@@ -392,12 +392,13 @@ public class GYSTCalendar extends AppCompatActivity implements NavigationView.On
 
     //TODO this is bad
     public GeoPoint getLocationFromAddress(String strAddress){
+        System.out.println("getLocationFromAddress loc: " + strAddress);
         Geocoder coder = new Geocoder(this);
         List<Address> address;
         GeoPoint p1 = null;
 
         try {
-            address = coder.getFromLocationName(strAddress,5);
+            address = coder.getFromLocationName(strAddress,1);
             if ((address==null)||(address.size()==0)) {
                 return null;
             }
