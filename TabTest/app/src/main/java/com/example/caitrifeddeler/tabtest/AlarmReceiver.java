@@ -31,18 +31,9 @@ public class AlarmReceiver extends BroadcastReceiver
         Double eventLon = bundle.getDouble("event_longitude");
 
 
-
-        //double lat = 30.2884386;
-        //double lon = -97.73686636;
         GeoPoint eventGeo= new GeoPoint(eventLat, eventLon);
-        //eventGeo.setLatitude(lat);
-        //eventGeo.setLongitude(lon);
 
         GeoPoint userGeo=new GeoPoint(variables.getUserLat(), variables.getUserLong());
-
-
-
-        //BELOW IS CORRECT
 
         Location locationA = new Location("point A");
         locationA.setLatitude(userGeo.getLatitude());
@@ -68,36 +59,6 @@ public class AlarmReceiver extends BroadcastReceiver
             missedEvent();
         }
 
-
-
-
-
-        //Now read users location
-
-        //System.out.println("Latitude : "+ eventGeo.getLatitude());
-        // System.out.println("Longitude : "+ eventGeo.getLongitude());
-
-
-        //convert event location to GeoPoint using location getFromAddress
-        //now we read users location
-        //compare user to event location using the function ....TODO
-        //then if distance is less than .... attended() if not missed()
-        // attendedEvent();
-
-
-
-        //get users
-
-        //TODO make this more functional
-        /*
-
-        so in this class I will convert the location to latitude and longitude
-        I will then I will create the geofence that lasts:
-        a)until the user has entered the geofence
-        or
-        b) until 5 minutes after the event has started (so if I set the alarms for 15 min before the event
-            we create a geofence that lasts for a total of 20 min)
-         */
 
     }
 
