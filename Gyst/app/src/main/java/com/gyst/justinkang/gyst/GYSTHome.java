@@ -123,7 +123,9 @@ public class GYSTHome extends AppCompatActivity
             }
             frag = sunflowerFragment;
         } else if (id == R.id.nav_calendar) {
-            frag = new CalFrag();
+//            frag = new CalFrag();
+            Intent intent = new Intent(GYSTHome.this, GYSTCalendar.class);
+            GYSTHome.this.startActivity(intent);
         }
 
         fragManager.beginTransaction().replace(R.id.mainFrame, frag).commit();

@@ -64,6 +64,18 @@
         "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_select_dialog_material.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_layout.xml"
+=======
         "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_activity_chooser_view.xml"
     },
@@ -74,6 +86,7 @@
     {
         "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
         "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/layout/design_navigation_menu.xml"
+>>>>>>> afc5c3af1ff2c65ec3c43a380be426b724ba2d26
     },
     {
         "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
@@ -96,8 +109,17 @@
         "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/content_calendar.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/src/main/res/layout/content_calendar.xml"
+    },
+    {
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_toolbar.xml"
+=======
         "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_alert_dialog_material.xml"
+>>>>>>> afc5c3af1ff2c65ec3c43a380be426b724ba2d26
     },
     {
         "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",

@@ -76,7 +76,7 @@ public class Utility extends Activity {
 
         }
 
-        //setAlarms();
+//        setAlarms();
 
         return nameOfEvent;
     }
@@ -90,7 +90,7 @@ public class Utility extends Activity {
 
 
     //Every time the calendar is refereshed or read again to be synced the alarms are re-set to ensure they are up to date
-    public static void setAlarms() {
+    public void setAlarms() {
 
         for (int i = 0; i < Utility.nameOfEvent.size(); i++) {
             //the second part of this if statement makes sure we are only creating alarms for future events
@@ -101,7 +101,7 @@ public class Utility extends Activity {
                 int id = i;
                 String location=Utility.locationOfEvent.get(i);
 
-                Intent intent = new Intent(mContext, AlarmReceiver.class);
+                Intent intent = new Intent(Utility.this, AlarmReceiver.class);
                 intent.putExtra("event_location", location);
 
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(

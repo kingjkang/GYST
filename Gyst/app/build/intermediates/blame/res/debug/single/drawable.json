@@ -48,6 +48,18 @@
         "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_cab_background_top_material.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable/dot1.png",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/src/main/res/drawable/dot1.png"
+    },
+    {
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable/calendar.png",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/src/main/res/drawable/calendar.png"
+    },
+    {
+        "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_edit_text_material.xml"
+=======
         "merged": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
         "source": "/Users/CaitriFeddeler/Desktop/Spring2016/EE461L/Gyst1/GYST/Gyst/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_seekbar_thumb_material.xml"
     },
@@ -58,6 +70,7 @@
     {
         "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable/arrow_left.png",
         "source": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/src/main/res/drawable/arrow_left.png"
+>>>>>>> afc5c3af1ff2c65ec3c43a380be426b724ba2d26
     },
     {
         "merged": "/Users/justinkang/Documents/Spring2016/EE461L/GYST4/GYST/Gyst/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
