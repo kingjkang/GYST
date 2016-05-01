@@ -1,4 +1,4 @@
-package com.example.caitrifeddeler.tabtest;
+package com.example.caitrifeddeler.GYST;
 
 import android.Manifest;
 import android.app.Activity;
@@ -9,7 +9,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.widget.TextView;
 import android.widget.Toast;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.caitrifeddeler.tabtest">
+    package="com.example.caitrifeddeler.GYST">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.caitrifeddeler.GYST.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -34,13 +34,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".LocationActivity" />
+        <activity android:name="com.example.caitrifeddeler.GYST.CalendarActivity" />
+        <activity android:name="com.example.caitrifeddeler.GYST.LocationActivity" />
 
-        <receiver android:name=".AlarmReceiver"></receiver>
+        <receiver android:name="com.example.caitrifeddeler.GYST.AlarmReceiver"></receiver>
 
         <activity
-            android:name=".GYSTflower"
+            android:name="com.example.caitrifeddeler.GYST.GYSTflower"
             android:label="@string/title_activity_gystflower"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

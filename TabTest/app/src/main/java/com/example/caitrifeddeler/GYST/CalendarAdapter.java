@@ -1,4 +1,4 @@
-package com.example.caitrifeddeler.tabtest;
+package com.example.caitrifeddeler.GYST;
 
 /**
  * Created by CaitriFeddeler on 4/29/16.
@@ -10,7 +10,6 @@ import java.util.GregorianCalendar;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 

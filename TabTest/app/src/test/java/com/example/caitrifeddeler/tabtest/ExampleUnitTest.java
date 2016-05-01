@@ -1,4 +1,4 @@
-package com.example.caitrifeddeler.tabtest;
+package com.example.caitrifeddeler.GYST;
 
 import org.junit.Test;
 

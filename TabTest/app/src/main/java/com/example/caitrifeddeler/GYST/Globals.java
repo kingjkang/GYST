@@ -1,15 +1,10 @@
-package com.example.caitrifeddeler.tabtest;
+package com.example.caitrifeddeler.GYST;
 
 /**
  * Created by CaitriFeddeler on 4/29/16.
  */
 import android.app.Application;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-
-import java.beans.PropertyChangeListener;
 
 /**
  * Created by justinkang on 3/23/16.
